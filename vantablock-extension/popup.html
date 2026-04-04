@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VantaBlock</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 220px;
+      background: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    /* Logo – full width banner */
+    .header {
+      width: 100%;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+    .logo {
+      width: 100%;
+      text-align: center;
+    }
+    .logo img {
+      width: 100%;
+      max-height: 80px;
+      object-fit: contain;
+    }
+
+    /* Content area with padding */
+    .content {
+      padding: 12px;
+    }
+
+    .status-card {
+      background: #f8f9fc;
+      border-radius: 12px;
+      padding: 8px;
+      text-align: center;
+      margin-bottom: 10px;
+      border: 1px solid #eef2f6;
+    }
+    .status-label {
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6c757d;
+    }
+    .verdict {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 4px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .confidence {
+      font-size: 9px;
+      background: #ffffff;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      color: #2c3e50;
+      border: 1px solid #e2e8f0;
+    }
+    .human { color: #2e7d32; }
+    .bot { color: #d32f2f; }
+    .unknown { color: #ed6c02; }
+
+    .stats {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .stat-box {
+      background: #f8f9fc;
+      border-radius: 10px;
+      padding: 6px 2px;
+      flex: 1;
+      text-align: center;
+      border: 1px solid #eef2f6;
+    }
+    .stat-number {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .stat-label {
+      font-size: 7px;
+      font-weight: 500;
+      color: #6c757d;
+      text-transform: uppercase;
+    }
+
+    button {
+      width: 100%;
+      background: #1a1a2e;
+      border: none;
+      color: white;
+      padding: 6px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    button:hover {
+      background: #2d2d44;
+    }
+
+    .footer {
+      font-size: 7px;
+      text-align: center;
+      margin-top: 8px;
+      color: #adb5bd;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Full‑width logo banner -->
+    <div class="header">
+      <div class="logo">
+        <img src="c:\Users\Sahil\Downloads\icon_nobackgrnd.png" alt="VantaBlock">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="status-card">
+        <div class="status-label">LAST DETECTION</div>
+        <div class="verdict" id="verdictText">—</div>
+        <div class="confidence" id="confidenceText">Awaiting</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number" id="totalChecks">0</div>
+          <div class="stat-label">Checks</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" id="blockedCount">0</div>
+          <div class="stat-label">Blocked</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" id="humanCount">0</div>
+          <div class="stat-label">Human</div>
+        </div>
+      </div>
+
+      <button id="refreshBtn">
+        <span>⟳</span> Refresh
+      </button>
+      <div class="footer">
+        bot protection
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

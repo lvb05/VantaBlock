@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "VantaBlock Bot Blocker",
+  "version": "1.0.0",
+  "description": "Detects and blocks bots by disabling UI, terminating session, and logging out.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "cookies",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "https://your-backend.com/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["config.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "VantaBlock"
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
+}
