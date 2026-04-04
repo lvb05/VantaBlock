@@ -1,0 +1,588 @@
+{
+  "segment_id": "agent_20260404_132329_xp4c3x_iter6_seg0001",
+  "label": "agent",
+  "events": [
+    {
+      "event_id": 123,
+      "timestamp_ms": 26210,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "T",
+        "hold_duration_ms": 113
+      }
+    },
+    {
+      "event_id": 124,
+      "timestamp_ms": 26293,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "value_before": "433 T",
+        "value_after": "433 Te"
+      }
+    },
+    {
+      "event_id": 125,
+      "timestamp_ms": 26415,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "hold_duration_ms": 113
+      }
+    },
+    {
+      "event_id": 126,
+      "timestamp_ms": 26579,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "s",
+        "value_before": "433 Te",
+        "value_after": "433 Tes"
+      }
+    },
+    {
+      "event_id": 127,
+      "timestamp_ms": 26672,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "s",
+        "hold_duration_ms": 84
+      }
+    },
+    {
+      "event_id": 128,
+      "timestamp_ms": 26865,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "value_before": "433 Tes",
+        "value_after": "433 Test"
+      }
+    },
+    {
+      "event_id": 129,
+      "timestamp_ms": 26972,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "hold_duration_ms": 98
+      }
+    },
+    {
+      "event_id": 130,
+      "timestamp_ms": 27100,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": " ",
+        "value_before": "433 Test",
+        "value_after": "433 Test "
+      }
+    },
+    {
+      "event_id": 131,
+      "timestamp_ms": 27187,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": " ",
+        "hold_duration_ms": 77
+      }
+    },
+    {
+      "event_id": 132,
+      "timestamp_ms": 27396,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "S",
+        "value_before": "433 Test ",
+        "value_after": "433 Test S"
+      }
+    },
+    {
+      "event_id": 133,
+      "timestamp_ms": 27475,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "S",
+        "hold_duration_ms": 69
+      }
+    },
+    {
+      "event_id": 134,
+      "timestamp_ms": 27627,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "value_before": "433 Test S",
+        "value_after": "433 Test St"
+      }
+    },
+    {
+      "event_id": 135,
+      "timestamp_ms": 27741,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "hold_duration_ms": 105
+      }
+    },
+    {
+      "event_id": 136,
+      "timestamp_ms": 27875,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "r",
+        "value_before": "433 Test St",
+        "value_after": "433 Test Str"
+      }
+    },
+    {
+      "event_id": 137,
+      "timestamp_ms": 27977,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "r",
+        "hold_duration_ms": 93
+      }
+    },
+    {
+      "event_id": 138,
+      "timestamp_ms": 28193,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "value_before": "433 Test Str",
+        "value_after": "433 Test Stre"
+      }
+    },
+    {
+      "event_id": 139,
+      "timestamp_ms": 28245,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "hold_duration_ms": 43
+      }
+    },
+    {
+      "event_id": 140,
+      "timestamp_ms": 28350,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "value_before": "433 Test Stre",
+        "value_after": "433 Test Stree"
+      }
+    },
+    {
+      "event_id": 141,
+      "timestamp_ms": 28475,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "e",
+        "hold_duration_ms": 115
+      }
+    },
+    {
+      "event_id": 142,
+      "timestamp_ms": 28590,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "value_before": "433 Test Stree",
+        "value_after": "433 Test Street"
+      }
+    },
+    {
+      "event_id": 143,
+      "timestamp_ms": 28745,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-address']",
+        "key": "t",
+        "hold_duration_ms": 142
+      }
+    },
+    {
+      "event_id": 144,
+      "timestamp_ms": 29248,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 392,
+            "y": 455,
+            "t_ms": 28998
+          },
+          {
+            "x": 389,
+            "y": 460,
+            "t_ms": 29028
+          },
+          {
+            "x": 380,
+            "y": 471,
+            "t_ms": 29059
+          },
+          {
+            "x": 369,
+            "y": 486,
+            "t_ms": 29090
+          },
+          {
+            "x": 354,
+            "y": 503,
+            "t_ms": 29122
+          },
+          {
+            "x": 341,
+            "y": 521,
+            "t_ms": 29156
+          },
+          {
+            "x": 330,
+            "y": 536,
+            "t_ms": 29187
+          },
+          {
+            "x": 320,
+            "y": 547,
+            "t_ms": 29219
+          },
+          {
+            "x": 318,
+            "y": 551,
+            "t_ms": 29248
+          }
+        ],
+        "target_element": "[data-log-id='input-city']",
+        "target_bbox": {
+          "x": 48,
+          "y": 522,
+          "width": 386,
+          "height": 43
+        }
+      }
+    },
+    {
+      "event_id": 145,
+      "timestamp_ms": 29248,
+      "type": "mousedown",
+      "data": {
+        "x": 317,
+        "y": 551,
+        "target_element": "[data-log-id='input-city']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 146,
+      "timestamp_ms": 29384,
+      "type": "mouseup",
+      "data": {
+        "x": 317,
+        "y": 551,
+        "target_element": "[data-log-id='input-city']",
+        "button": "left",
+        "hold_duration_ms": 136
+      }
+    },
+    {
+      "event_id": 147,
+      "timestamp_ms": 29384,
+      "type": "click",
+      "data": {
+        "x": 317,
+        "y": 551,
+        "target_element": "[data-log-id='input-city']",
+        "target_bbox": {
+          "x": 48,
+          "y": 522,
+          "width": 386,
+          "height": 43
+        },
+        "offset_from_center": {
+          "dx": 76,
+          "dy": 8
+        }
+      }
+    },
+    {
+      "event_id": 148,
+      "timestamp_ms": 29551,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "S",
+        "value_before": "",
+        "value_after": "S"
+      }
+    },
+    {
+      "event_id": 149,
+      "timestamp_ms": 29644,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "S",
+        "hold_duration_ms": 84
+      }
+    },
+    {
+      "event_id": 150,
+      "timestamp_ms": 29778,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "e",
+        "value_before": "S",
+        "value_after": "Se"
+      }
+    },
+    {
+      "event_id": 151,
+      "timestamp_ms": 29884,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "e",
+        "hold_duration_ms": 96
+      }
+    },
+    {
+      "event_id": 152,
+      "timestamp_ms": 30096,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "a",
+        "value_before": "Se",
+        "value_after": "Sea"
+      }
+    },
+    {
+      "event_id": 153,
+      "timestamp_ms": 30196,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "a",
+        "hold_duration_ms": 90
+      }
+    },
+    {
+      "event_id": 154,
+      "timestamp_ms": 30398,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "t",
+        "value_before": "Sea",
+        "value_after": "Seat"
+      }
+    },
+    {
+      "event_id": 155,
+      "timestamp_ms": 30477,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "t",
+        "hold_duration_ms": 69
+      }
+    },
+    {
+      "event_id": 156,
+      "timestamp_ms": 30627,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "t",
+        "value_before": "Seat",
+        "value_after": "Seatt"
+      }
+    },
+    {
+      "event_id": 157,
+      "timestamp_ms": 30724,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "t",
+        "hold_duration_ms": 88
+      }
+    },
+    {
+      "event_id": 158,
+      "timestamp_ms": 30822,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "l",
+        "value_before": "Seatt",
+        "value_after": "Seattl"
+      }
+    },
+    {
+      "event_id": 159,
+      "timestamp_ms": 30913,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "l",
+        "hold_duration_ms": 81
+      }
+    },
+    {
+      "event_id": 160,
+      "timestamp_ms": 31063,
+      "type": "keydown",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "e",
+        "value_before": "Seattl",
+        "value_after": "Seattle"
+      }
+    },
+    {
+      "event_id": 161,
+      "timestamp_ms": 31177,
+      "type": "keyup",
+      "data": {
+        "target_element": "[data-log-id='input-city']",
+        "key": "e",
+        "hold_duration_ms": 105
+      }
+    },
+    {
+      "event_id": 162,
+      "timestamp_ms": 32304,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 318,
+            "y": 551,
+            "t_ms": 31523
+          },
+          {
+            "x": 321,
+            "y": 551,
+            "t_ms": 31565
+          },
+          {
+            "x": 329,
+            "y": 551,
+            "t_ms": 31607
+          },
+          {
+            "x": 342,
+            "y": 551,
+            "t_ms": 31651
+          },
+          {
+            "x": 358,
+            "y": 551,
+            "t_ms": 31694
+          },
+          {
+            "x": 380,
+            "y": 550,
+            "t_ms": 31738
+          },
+          {
+            "x": 403,
+            "y": 550,
+            "t_ms": 31781
+          },
+          {
+            "x": 427,
+            "y": 549,
+            "t_ms": 31826
+          },
+          {
+            "x": 454,
+            "y": 550,
+            "t_ms": 31869
+          },
+          {
+            "x": 480,
+            "y": 548,
+            "t_ms": 31913
+          },
+          {
+            "x": 508,
+            "y": 548,
+            "t_ms": 31957
+          },
+          {
+            "x": 535,
+            "y": 548,
+            "t_ms": 32001
+          },
+          {
+            "x": 559,
+            "y": 548,
+            "t_ms": 32045
+          },
+          {
+            "x": 584,
+            "y": 547,
+            "t_ms": 32088
+          },
+          {
+            "x": 603,
+            "y": 548,
+            "t_ms": 32132
+          },
+          {
+            "x": 620,
+            "y": 547,
+            "t_ms": 32175
+          },
+          {
+            "x": 633,
+            "y": 546,
+            "t_ms": 32219
+          },
+          {
+            "x": 642,
+            "y": 546,
+            "t_ms": 32261
+          },
+          {
+            "x": 645,
+            "y": 546,
+            "t_ms": 32304
+          }
+        ],
+        "target_element": "[data-log-id='input-zip']",
+        "target_bbox": {
+          "x": 450,
+          "y": 522,
+          "width": 386,
+          "height": 43
+        }
+      }
+    }
+  ]
+}

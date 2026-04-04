@@ -1,0 +1,3039 @@
+{
+  "segment_id": "human_20260404_145116_fsqk18_1_seg0014",
+  "label": "human",
+  "events": [
+    {
+      "event_id": 1534,
+      "timestamp_ms": 159154,
+      "type": "mouseup",
+      "data": {
+        "x": 1202,
+        "y": 520,
+        "target_element": "#prodSpecs",
+        "button": "left",
+        "hold_duration_ms": 223
+      }
+    },
+    {
+      "event_id": 1535,
+      "timestamp_ms": 159158,
+      "type": "click",
+      "data": {
+        "x": 1202,
+        "y": 520,
+        "target_element": "#prodSpecs",
+        "target_bbox": {
+          "x": 808,
+          "y": 457,
+          "width": 664,
+          "height": 137
+        },
+        "offset_from_center": {
+          "dx": 62,
+          "dy": -5
+        }
+      }
+    },
+    {
+      "event_id": 1536,
+      "timestamp_ms": 159669,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1202,
+            "y": 519,
+            "t_ms": 158686
+          },
+          {
+            "x": 1190,
+            "y": 517,
+            "t_ms": 159669
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 504,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1537,
+      "timestamp_ms": 159676,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1190,
+            "y": 517,
+            "t_ms": 159669
+          },
+          {
+            "x": 1165,
+            "y": 510,
+            "t_ms": 159676
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 504,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1538,
+      "timestamp_ms": 159682,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1165,
+            "y": 510,
+            "t_ms": 159676
+          },
+          {
+            "x": 1135,
+            "y": 500,
+            "t_ms": 159682
+          }
+        ],
+        "target_element": "#reviewsContainer",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 413
+        }
+      }
+    },
+    {
+      "event_id": 1539,
+      "timestamp_ms": 159693,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1135,
+            "y": 500,
+            "t_ms": 159682
+          },
+          {
+            "x": 1094,
+            "y": 489,
+            "t_ms": 159693
+          }
+        ],
+        "target_element": "#reviewsContainer",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 413
+        }
+      }
+    },
+    {
+      "event_id": 1540,
+      "timestamp_ms": 159700,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1094,
+            "y": 489,
+            "t_ms": 159693
+          },
+          {
+            "x": 1053,
+            "y": 476,
+            "t_ms": 159700
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1541,
+      "timestamp_ms": 159706,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1053,
+            "y": 476,
+            "t_ms": 159700
+          },
+          {
+            "x": 1004,
+            "y": 462,
+            "t_ms": 159706
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 69,
+          "y": 444,
+          "width": 1383,
+          "height": 23
+        }
+      }
+    },
+    {
+      "event_id": 1542,
+      "timestamp_ms": 159718,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1004,
+            "y": 462,
+            "t_ms": 159706
+          },
+          {
+            "x": 902,
+            "y": 437,
+            "t_ms": 159718
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1543,
+      "timestamp_ms": 159724,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 902,
+            "y": 437,
+            "t_ms": 159718
+          },
+          {
+            "x": 847,
+            "y": 427,
+            "t_ms": 159724
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 69,
+          "y": 417,
+          "width": 1383,
+          "height": 19
+        }
+      }
+    },
+    {
+      "event_id": 1544,
+      "timestamp_ms": 159736,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 847,
+            "y": 427,
+            "t_ms": 159724
+          },
+          {
+            "x": 791,
+            "y": 419,
+            "t_ms": 159736
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 69,
+          "y": 417,
+          "width": 1383,
+          "height": 19
+        }
+      }
+    },
+    {
+      "event_id": 1545,
+      "timestamp_ms": 159743,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 791,
+            "y": 419,
+            "t_ms": 159736
+          },
+          {
+            "x": 736,
+            "y": 413,
+            "t_ms": 159743
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1546,
+      "timestamp_ms": 159754,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 736,
+            "y": 413,
+            "t_ms": 159743
+          },
+          {
+            "x": 635,
+            "y": 409,
+            "t_ms": 159754
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1547,
+      "timestamp_ms": 159760,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 635,
+            "y": 409,
+            "t_ms": 159754
+          },
+          {
+            "x": 594,
+            "y": 407,
+            "t_ms": 159760
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1548,
+      "timestamp_ms": 159772,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 594,
+            "y": 407,
+            "t_ms": 159760
+          },
+          {
+            "x": 559,
+            "y": 407,
+            "t_ms": 159772
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1549,
+      "timestamp_ms": 159779,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 559,
+            "y": 407,
+            "t_ms": 159772
+          },
+          {
+            "x": 531,
+            "y": 407,
+            "t_ms": 159779
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1550,
+      "timestamp_ms": 159785,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 531,
+            "y": 407,
+            "t_ms": 159779
+          },
+          {
+            "x": 516,
+            "y": 407,
+            "t_ms": 159785
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1551,
+      "timestamp_ms": 159791,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 516,
+            "y": 407,
+            "t_ms": 159785
+          },
+          {
+            "x": 504,
+            "y": 407,
+            "t_ms": 159791
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1552,
+      "timestamp_ms": 159797,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 496,
+        "duration_ms": 528,
+        "steps": [
+          {
+            "y": 12,
+            "t_ms": 159269
+          },
+          {
+            "y": 42,
+            "t_ms": 159281
+          },
+          {
+            "y": 84,
+            "t_ms": 159293
+          },
+          {
+            "y": 136,
+            "t_ms": 159306
+          },
+          {
+            "y": 190,
+            "t_ms": 159318
+          },
+          {
+            "y": 244,
+            "t_ms": 159330
+          },
+          {
+            "y": 289,
+            "t_ms": 159354
+          },
+          {
+            "y": 330,
+            "t_ms": 159366
+          },
+          {
+            "y": 370,
+            "t_ms": 159385
+          },
+          {
+            "y": 400,
+            "t_ms": 159403
+          },
+          {
+            "y": 434,
+            "t_ms": 159446
+          },
+          {
+            "y": 465,
+            "t_ms": 159500
+          },
+          {
+            "y": 481,
+            "t_ms": 159555
+          },
+          {
+            "y": 491,
+            "t_ms": 159609
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 1553,
+      "timestamp_ms": 159804,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 504,
+            "y": 407,
+            "t_ms": 159791
+          },
+          {
+            "x": 492,
+            "y": 407,
+            "t_ms": 159804
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        }
+      }
+    },
+    {
+      "event_id": 1554,
+      "timestamp_ms": 160059,
+      "type": "mousedown",
+      "data": {
+        "x": 484,
+        "y": 406,
+        "target_element": "div",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 1555,
+      "timestamp_ms": 160287,
+      "type": "mouseup",
+      "data": {
+        "x": 484,
+        "y": 406,
+        "target_element": "div",
+        "button": "left",
+        "hold_duration_ms": 228
+      }
+    },
+    {
+      "event_id": 1556,
+      "timestamp_ms": 160289,
+      "type": "click",
+      "data": {
+        "x": 484,
+        "y": 406,
+        "target_element": "div",
+        "target_bbox": {
+          "x": 48,
+          "y": 396,
+          "width": 1425,
+          "height": 91
+        },
+        "offset_from_center": {
+          "dx": -276,
+          "dy": -35
+        }
+      }
+    },
+    {
+      "event_id": 1557,
+      "timestamp_ms": 160920,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 492,
+            "y": 407,
+            "t_ms": 159804
+          },
+          {
+            "x": 478,
+            "y": 406,
+            "t_ms": 160920
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1558,
+      "timestamp_ms": 160938,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 478,
+            "y": 406,
+            "t_ms": 160920
+          },
+          {
+            "x": 468,
+            "y": 405,
+            "t_ms": 160938
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1559,
+      "timestamp_ms": 160956,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 468,
+            "y": 405,
+            "t_ms": 160938
+          },
+          {
+            "x": 455,
+            "y": 405,
+            "t_ms": 160956
+          }
+        ],
+        "target_element": "#thumbRow",
+        "target_bbox": {
+          "x": 234,
+          "y": 347,
+          "width": 292,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1560,
+      "timestamp_ms": 161047,
+      "type": "scroll",
+      "data": {
+        "start_y": 496,
+        "end_y": 248,
+        "duration_ms": 478,
+        "steps": [
+          {
+            "y": 486,
+            "t_ms": 160569
+          },
+          {
+            "y": 452,
+            "t_ms": 160604
+          },
+          {
+            "y": 415,
+            "t_ms": 160623
+          },
+          {
+            "y": 371,
+            "t_ms": 160641
+          },
+          {
+            "y": 337,
+            "t_ms": 160665
+          },
+          {
+            "y": 303,
+            "t_ms": 160683
+          },
+          {
+            "y": 276,
+            "t_ms": 160739
+          },
+          {
+            "y": 260,
+            "t_ms": 160793
+          },
+          {
+            "y": 251,
+            "t_ms": 160848
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 1561,
+      "timestamp_ms": 161159,
+      "type": "mousedown",
+      "data": {
+        "x": 446,
+        "y": 406,
+        "target_element": "[data-log-id='thumb-2']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 1562,
+      "timestamp_ms": 161377,
+      "type": "mouseup",
+      "data": {
+        "x": 446,
+        "y": 406,
+        "target_element": "[data-log-id='thumb-2']",
+        "button": "left",
+        "hold_duration_ms": 218
+      }
+    },
+    {
+      "event_id": 1563,
+      "timestamp_ms": 161382,
+      "type": "click",
+      "data": {
+        "x": 446,
+        "y": 406,
+        "target_element": "[data-log-id='thumb-2']",
+        "target_bbox": {
+          "x": 386,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        },
+        "offset_from_center": {
+          "dx": 28,
+          "dy": 27
+        }
+      }
+    },
+    {
+      "event_id": 1564,
+      "timestamp_ms": 161661,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 455,
+            "y": 405,
+            "t_ms": 160956
+          },
+          {
+            "x": 453,
+            "y": 403,
+            "t_ms": 161661
+          }
+        ],
+        "target_element": "#thumbRow",
+        "target_bbox": {
+          "x": 234,
+          "y": 347,
+          "width": 292,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1565,
+      "timestamp_ms": 161670,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 453,
+            "y": 403,
+            "t_ms": 161661
+          },
+          {
+            "x": 466,
+            "y": 397,
+            "t_ms": 161670
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1566,
+      "timestamp_ms": 161676,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 466,
+            "y": 397,
+            "t_ms": 161670
+          },
+          {
+            "x": 480,
+            "y": 391,
+            "t_ms": 161676
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1567,
+      "timestamp_ms": 161685,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 480,
+            "y": 391,
+            "t_ms": 161676
+          },
+          {
+            "x": 496,
+            "y": 386,
+            "t_ms": 161685
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1568,
+      "timestamp_ms": 161694,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 496,
+            "y": 386,
+            "t_ms": 161685
+          },
+          {
+            "x": 514,
+            "y": 380,
+            "t_ms": 161694
+          }
+        ],
+        "target_element": "[data-log-id='thumb-3']",
+        "target_bbox": {
+          "x": 462,
+          "y": 347,
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "event_id": 1569,
+      "timestamp_ms": 161701,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 514,
+            "y": 380,
+            "t_ms": 161694
+          },
+          {
+            "x": 533,
+            "y": 374,
+            "t_ms": 161701
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1570,
+      "timestamp_ms": 161709,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 533,
+            "y": 374,
+            "t_ms": 161701
+          },
+          {
+            "x": 547,
+            "y": 372,
+            "t_ms": 161709
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1571,
+      "timestamp_ms": 161717,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 547,
+            "y": 372,
+            "t_ms": 161709
+          },
+          {
+            "x": 562,
+            "y": 369,
+            "t_ms": 161717
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1572,
+      "timestamp_ms": 161724,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 562,
+            "y": 369,
+            "t_ms": 161717
+          },
+          {
+            "x": 576,
+            "y": 367,
+            "t_ms": 161724
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1573,
+      "timestamp_ms": 161733,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 576,
+            "y": 367,
+            "t_ms": 161724
+          },
+          {
+            "x": 592,
+            "y": 365,
+            "t_ms": 161733
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1574,
+      "timestamp_ms": 161738,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 592,
+            "y": 365,
+            "t_ms": 161733
+          },
+          {
+            "x": 602,
+            "y": 364,
+            "t_ms": 161738
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1575,
+      "timestamp_ms": 161742,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 602,
+            "y": 364,
+            "t_ms": 161738
+          },
+          {
+            "x": 613,
+            "y": 364,
+            "t_ms": 161742
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1576,
+      "timestamp_ms": 161755,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 613,
+            "y": 364,
+            "t_ms": 161742
+          },
+          {
+            "x": 629,
+            "y": 363,
+            "t_ms": 161755
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1577,
+      "timestamp_ms": 161775,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 629,
+            "y": 363,
+            "t_ms": 161755
+          },
+          {
+            "x": 640,
+            "y": 363,
+            "t_ms": 161775
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1578,
+      "timestamp_ms": 161990,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 640,
+            "y": 363,
+            "t_ms": 161775
+          },
+          {
+            "x": 667,
+            "y": 369,
+            "t_ms": 161990
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1579,
+      "timestamp_ms": 161996,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 667,
+            "y": 369,
+            "t_ms": 161990
+          },
+          {
+            "x": 700,
+            "y": 383,
+            "t_ms": 161996
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1580,
+      "timestamp_ms": 162003,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 700,
+            "y": 383,
+            "t_ms": 161996
+          },
+          {
+            "x": 740,
+            "y": 400,
+            "t_ms": 162003
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1581,
+      "timestamp_ms": 162010,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 740,
+            "y": 400,
+            "t_ms": 162003
+          },
+          {
+            "x": 778,
+            "y": 413,
+            "t_ms": 162010
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1582,
+      "timestamp_ms": 162017,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 778,
+            "y": 413,
+            "t_ms": 162010
+          },
+          {
+            "x": 813,
+            "y": 425,
+            "t_ms": 162017
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1583,
+      "timestamp_ms": 162024,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 813,
+            "y": 425,
+            "t_ms": 162017
+          },
+          {
+            "x": 847,
+            "y": 437,
+            "t_ms": 162024
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": -122,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1584,
+      "timestamp_ms": 162033,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 847,
+            "y": 437,
+            "t_ms": 162024
+          },
+          {
+            "x": 872,
+            "y": 447,
+            "t_ms": 162033
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1585,
+      "timestamp_ms": 162040,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 872,
+            "y": 447,
+            "t_ms": 162033
+          },
+          {
+            "x": 892,
+            "y": 455,
+            "t_ms": 162040
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1586,
+      "timestamp_ms": 162047,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 892,
+            "y": 455,
+            "t_ms": 162040
+          },
+          {
+            "x": 911,
+            "y": 459,
+            "t_ms": 162047
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1587,
+      "timestamp_ms": 162055,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 911,
+            "y": 459,
+            "t_ms": 162047
+          },
+          {
+            "x": 923,
+            "y": 461,
+            "t_ms": 162055
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1588,
+      "timestamp_ms": 162073,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 923,
+            "y": 461,
+            "t_ms": 162055
+          },
+          {
+            "x": 942,
+            "y": 462,
+            "t_ms": 162073
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1589,
+      "timestamp_ms": 162085,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 942,
+            "y": 462,
+            "t_ms": 162073
+          },
+          {
+            "x": 954,
+            "y": 462,
+            "t_ms": 162085
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1590,
+      "timestamp_ms": 162109,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 954,
+            "y": 462,
+            "t_ms": 162085
+          },
+          {
+            "x": 963,
+            "y": 457,
+            "t_ms": 162109
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 1591,
+      "timestamp_ms": 162352,
+      "type": "mousedown",
+      "data": {
+        "x": 963,
+        "y": 457,
+        "target_element": "[data-log-id='add-to-cart']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 1592,
+      "timestamp_ms": 162568,
+      "type": "mouseup",
+      "data": {
+        "x": 963,
+        "y": 457,
+        "target_element": "[data-log-id='add-to-cart']",
+        "button": "left",
+        "hold_duration_ms": 216
+      }
+    },
+    {
+      "event_id": 1593,
+      "timestamp_ms": 162573,
+      "type": "click",
+      "data": {
+        "x": 963,
+        "y": 457,
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 808,
+          "y": 443,
+          "width": 520,
+          "height": 54
+        },
+        "offset_from_center": {
+          "dx": -105,
+          "dy": -13
+        }
+      }
+    },
+    {
+      "event_id": 1594,
+      "timestamp_ms": 163117,
+      "type": "scroll",
+      "data": {
+        "start_y": 248,
+        "end_y": 0,
+        "duration_ms": 345,
+        "steps": [
+          {
+            "y": 243,
+            "t_ms": 162772
+          },
+          {
+            "y": 213,
+            "t_ms": 162820
+          },
+          {
+            "y": 180,
+            "t_ms": 162844
+          },
+          {
+            "y": 140,
+            "t_ms": 162862
+          },
+          {
+            "y": 99,
+            "t_ms": 162881
+          },
+          {
+            "y": 61,
+            "t_ms": 162899
+          },
+          {
+            "y": 25,
+            "t_ms": 162930
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 1595,
+      "timestamp_ms": 163239,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 963,
+            "y": 457,
+            "t_ms": 162109
+          },
+          {
+            "x": 978,
+            "y": 441,
+            "t_ms": 163239
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1596,
+      "timestamp_ms": 163245,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 978,
+            "y": 441,
+            "t_ms": 163239
+          },
+          {
+            "x": 997,
+            "y": 418,
+            "t_ms": 163245
+          }
+        ],
+        "target_element": "#prodDesc",
+        "target_bbox": {
+          "x": 808,
+          "y": 386,
+          "width": 664,
+          "height": 52
+        }
+      }
+    },
+    {
+      "event_id": 1597,
+      "timestamp_ms": 163257,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 997,
+            "y": 418,
+            "t_ms": 163245
+          },
+          {
+            "x": 1040,
+            "y": 367,
+            "t_ms": 163257
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1598,
+      "timestamp_ms": 163269,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1040,
+            "y": 367,
+            "t_ms": 163257
+          },
+          {
+            "x": 1067,
+            "y": 339,
+            "t_ms": 163269
+          }
+        ],
+        "target_element": "#prodPrice",
+        "target_bbox": {
+          "x": 808,
+          "y": 302,
+          "width": 664,
+          "height": 42
+        }
+      }
+    },
+    {
+      "event_id": 1599,
+      "timestamp_ms": 163275,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1067,
+            "y": 339,
+            "t_ms": 163269
+          },
+          {
+            "x": 1096,
+            "y": 308,
+            "t_ms": 163275
+          }
+        ],
+        "target_element": "#prodPrice",
+        "target_bbox": {
+          "x": 808,
+          "y": 302,
+          "width": 664,
+          "height": 42
+        }
+      }
+    },
+    {
+      "event_id": 1600,
+      "timestamp_ms": 163281,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1096,
+            "y": 308,
+            "t_ms": 163275
+          },
+          {
+            "x": 1124,
+            "y": 278,
+            "t_ms": 163281
+          }
+        ],
+        "target_element": "#prodRating",
+        "target_bbox": {
+          "x": 808,
+          "y": 264,
+          "width": 664,
+          "height": 18
+        }
+      }
+    },
+    {
+      "event_id": 1601,
+      "timestamp_ms": 163287,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1124,
+            "y": 278,
+            "t_ms": 163281
+          },
+          {
+            "x": 1154,
+            "y": 247,
+            "t_ms": 163287
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1602,
+      "timestamp_ms": 163294,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1154,
+            "y": 247,
+            "t_ms": 163287
+          },
+          {
+            "x": 1185,
+            "y": 217,
+            "t_ms": 163294
+          }
+        ],
+        "target_element": "#prodName",
+        "target_bbox": {
+          "x": 808,
+          "y": 209,
+          "width": 664,
+          "height": 35
+        }
+      }
+    },
+    {
+      "event_id": 1603,
+      "timestamp_ms": 163300,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1185,
+            "y": 217,
+            "t_ms": 163294
+          },
+          {
+            "x": 1214,
+            "y": 191,
+            "t_ms": 163300
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1604,
+      "timestamp_ms": 163311,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1214,
+            "y": 191,
+            "t_ms": 163300
+          },
+          {
+            "x": 1241,
+            "y": 162,
+            "t_ms": 163311
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1605,
+      "timestamp_ms": 163317,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1241,
+            "y": 162,
+            "t_ms": 163311
+          },
+          {
+            "x": 1264,
+            "y": 139,
+            "t_ms": 163317
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 760,
+          "y": 126,
+          "width": 760,
+          "height": 666
+        }
+      }
+    },
+    {
+      "event_id": 1606,
+      "timestamp_ms": 163323,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1264,
+            "y": 139,
+            "t_ms": 163317
+          },
+          {
+            "x": 1288,
+            "y": 119,
+            "t_ms": 163323
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": 77,
+          "width": 1521,
+          "height": 50
+        }
+      }
+    },
+    {
+      "event_id": 1607,
+      "timestamp_ms": 163329,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1288,
+            "y": 119,
+            "t_ms": 163323
+          },
+          {
+            "x": 1305,
+            "y": 101,
+            "t_ms": 163329
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": 77,
+          "width": 1521,
+          "height": 50
+        }
+      }
+    },
+    {
+      "event_id": 1608,
+      "timestamp_ms": 163335,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1305,
+            "y": 101,
+            "t_ms": 163329
+          },
+          {
+            "x": 1321,
+            "y": 85,
+            "t_ms": 163335
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": 77,
+          "width": 1521,
+          "height": 50
+        }
+      }
+    },
+    {
+      "event_id": 1609,
+      "timestamp_ms": 163348,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1321,
+            "y": 85,
+            "t_ms": 163335
+          },
+          {
+            "x": 1336,
+            "y": 70,
+            "t_ms": 163348
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1610,
+      "timestamp_ms": 163354,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1336,
+            "y": 70,
+            "t_ms": 163348
+          },
+          {
+            "x": 1348,
+            "y": 57,
+            "t_ms": 163354
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1611,
+      "timestamp_ms": 163361,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1348,
+            "y": 57,
+            "t_ms": 163354
+          },
+          {
+            "x": 1362,
+            "y": 46,
+            "t_ms": 163361
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1612,
+      "timestamp_ms": 163372,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1362,
+            "y": 46,
+            "t_ms": 163361
+          },
+          {
+            "x": 1372,
+            "y": 37,
+            "t_ms": 163372
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1613,
+      "timestamp_ms": 163384,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1372,
+            "y": 37,
+            "t_ms": 163372
+          },
+          {
+            "x": 1386,
+            "y": 23,
+            "t_ms": 163384
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1614,
+      "timestamp_ms": 163396,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1386,
+            "y": 23,
+            "t_ms": 163384
+          },
+          {
+            "x": 1396,
+            "y": 13,
+            "t_ms": 163396
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1615,
+      "timestamp_ms": 163433,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1396,
+            "y": 13,
+            "t_ms": 163396
+          },
+          {
+            "x": 1403,
+            "y": 5,
+            "t_ms": 163433
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1616,
+      "timestamp_ms": 163490,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1403,
+            "y": 5,
+            "t_ms": 163433
+          },
+          {
+            "x": 1404,
+            "y": 4,
+            "t_ms": 163490
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1617,
+      "timestamp_ms": 163671,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1404,
+            "y": 4,
+            "t_ms": 163490
+          },
+          {
+            "x": 1409,
+            "y": 0,
+            "t_ms": 163671
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1618,
+      "timestamp_ms": 163691,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1409,
+            "y": 0,
+            "t_ms": 163671
+          },
+          {
+            "x": 1412,
+            "y": 12,
+            "t_ms": 163691
+          }
+        ],
+        "target_element": "header",
+        "target_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1521,
+          "height": 77
+        }
+      }
+    },
+    {
+      "event_id": 1619,
+      "timestamp_ms": 163722,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1412,
+            "y": 12,
+            "t_ms": 163691
+          },
+          {
+            "x": 1414,
+            "y": 29,
+            "t_ms": 163722
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1620,
+      "timestamp_ms": 163736,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1414,
+            "y": 29,
+            "t_ms": 163722
+          },
+          {
+            "x": 1414,
+            "y": 40,
+            "t_ms": 163736
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1621,
+      "timestamp_ms": 163787,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1414,
+            "y": 40,
+            "t_ms": 163736
+          },
+          {
+            "x": 1412,
+            "y": 50,
+            "t_ms": 163787
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1622,
+      "timestamp_ms": 163845,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1412,
+            "y": 50,
+            "t_ms": 163787
+          },
+          {
+            "x": 1412,
+            "y": 51,
+            "t_ms": 163845
+          }
+        ],
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        }
+      }
+    },
+    {
+      "event_id": 1623,
+      "timestamp_ms": 164048,
+      "type": "mousedown",
+      "data": {
+        "x": 1412,
+        "y": 51,
+        "target_element": "[data-log-id='nav-cart']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 1624,
+      "timestamp_ms": 164266,
+      "type": "mouseup",
+      "data": {
+        "x": 1412,
+        "y": 51,
+        "target_element": "[data-log-id='nav-cart']",
+        "button": "left",
+        "hold_duration_ms": 218
+      }
+    },
+    {
+      "event_id": 1625,
+      "timestamp_ms": 164271,
+      "type": "click",
+      "data": {
+        "x": 1412,
+        "y": 51,
+        "target_element": "[data-log-id='nav-cart']",
+        "target_bbox": {
+          "x": 1352,
+          "y": 20,
+          "width": 121,
+          "height": 36
+        },
+        "offset_from_center": {
+          "dx": 0,
+          "dy": 13
+        }
+      }
+    },
+    {
+      "event_id": 1626,
+      "timestamp_ms": 164934,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/cart.html",
+        "referrer": "http://localhost:8001/demo/product.html?id=p052",
+        "page": "cart"
+      }
+    },
+    {
+      "event_id": 1627,
+      "timestamp_ms": 165547,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 553,
+            "y": 297,
+            "t_ms": 164970
+          },
+          {
+            "x": 579,
+            "y": 297,
+            "t_ms": 165547
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 296,
+          "width": 885,
+          "height": 30
+        }
+      }
+    },
+    {
+      "event_id": 1628,
+      "timestamp_ms": 165554,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 579,
+            "y": 297,
+            "t_ms": 165547
+          },
+          {
+            "x": 620,
+            "y": 295,
+            "t_ms": 165554
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 245,
+          "width": 885,
+          "height": 81
+        }
+      }
+    },
+    {
+      "event_id": 1629,
+      "timestamp_ms": 165562,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 620,
+            "y": 295,
+            "t_ms": 165554
+          },
+          {
+            "x": 667,
+            "y": 293,
+            "t_ms": 165562
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 245,
+          "width": 885,
+          "height": 81
+        }
+      }
+    },
+    {
+      "event_id": 1630,
+      "timestamp_ms": 165569,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 667,
+            "y": 293,
+            "t_ms": 165562
+          },
+          {
+            "x": 716,
+            "y": 291,
+            "t_ms": 165569
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 245,
+          "width": 885,
+          "height": 81
+        }
+      }
+    },
+    {
+      "event_id": 1631,
+      "timestamp_ms": 165576,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 716,
+            "y": 291,
+            "t_ms": 165569
+          },
+          {
+            "x": 770,
+            "y": 293,
+            "t_ms": 165576
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 245,
+          "width": 885,
+          "height": 81
+        }
+      }
+    },
+    {
+      "event_id": 1632,
+      "timestamp_ms": 165584,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 770,
+            "y": 293,
+            "t_ms": 165576
+          },
+          {
+            "x": 828,
+            "y": 294,
+            "t_ms": 165584
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 245,
+          "width": 885,
+          "height": 81
+        }
+      }
+    },
+    {
+      "event_id": 1633,
+      "timestamp_ms": 165591,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 828,
+            "y": 294,
+            "t_ms": 165584
+          },
+          {
+            "x": 884,
+            "y": 298,
+            "t_ms": 165591
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 296,
+          "width": 885,
+          "height": 30
+        }
+      }
+    },
+    {
+      "event_id": 1634,
+      "timestamp_ms": 165598,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 884,
+            "y": 298,
+            "t_ms": 165591
+          },
+          {
+            "x": 936,
+            "y": 300,
+            "t_ms": 165598
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 296,
+          "width": 885,
+          "height": 30
+        }
+      }
+    },
+    {
+      "event_id": 1635,
+      "timestamp_ms": 165605,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 936,
+            "y": 300,
+            "t_ms": 165598
+          },
+          {
+            "x": 989,
+            "y": 308,
+            "t_ms": 165605
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 132,
+          "y": 296,
+          "width": 885,
+          "height": 30
+        }
+      }
+    },
+    {
+      "event_id": 1636,
+      "timestamp_ms": 165613,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 989,
+            "y": 308,
+            "t_ms": 165605
+          },
+          {
+            "x": 1032,
+            "y": 313,
+            "t_ms": 165613
+          }
+        ],
+        "target_element": "[data-log-id='cart-item-p052']",
+        "target_bbox": {
+          "x": 48,
+          "y": 221,
+          "width": 1059,
+          "height": 130
+        }
+      }
+    },
+    {
+      "event_id": 1637,
+      "timestamp_ms": 165620,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1032,
+            "y": 313,
+            "t_ms": 165613
+          },
+          {
+            "x": 1071,
+            "y": 321,
+            "t_ms": 165620
+          }
+        ],
+        "target_element": "[data-log-id='cart-item-p052']",
+        "target_bbox": {
+          "x": 48,
+          "y": 221,
+          "width": 1059,
+          "height": 130
+        }
+      }
+    },
+    {
+      "event_id": 1638,
+      "timestamp_ms": 165628,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1071,
+            "y": 321,
+            "t_ms": 165620
+          },
+          {
+            "x": 1106,
+            "y": 328,
+            "t_ms": 165628
+          }
+        ],
+        "target_element": "[data-log-id='cart-item-p052']",
+        "target_bbox": {
+          "x": 48,
+          "y": 221,
+          "width": 1059,
+          "height": 130
+        }
+      }
+    },
+    {
+      "event_id": 1639,
+      "timestamp_ms": 165637,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1106,
+            "y": 328,
+            "t_ms": 165628
+          },
+          {
+            "x": 1132,
+            "y": 333,
+            "t_ms": 165637
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": 118,
+          "width": 1156,
+          "height": 511
+        }
+      }
+    },
+    {
+      "event_id": 1640,
+      "timestamp_ms": 165642,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1132,
+            "y": 333,
+            "t_ms": 165637
+          },
+          {
+            "x": 1151,
+            "y": 336,
+            "t_ms": 165642
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 0,
+          "y": 118,
+          "width": 1156,
+          "height": 511
+        }
+      }
+    },
+    {
+      "event_id": 1641,
+      "timestamp_ms": 165649,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1151,
+            "y": 336,
+            "t_ms": 165642
+          },
+          {
+            "x": 1163,
+            "y": 340,
+            "t_ms": 165649
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1642,
+      "timestamp_ms": 165657,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1163,
+            "y": 340,
+            "t_ms": 165649
+          },
+          {
+            "x": 1174,
+            "y": 341,
+            "t_ms": 165657
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1643,
+      "timestamp_ms": 165669,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1174,
+            "y": 341,
+            "t_ms": 165657
+          },
+          {
+            "x": 1190,
+            "y": 344,
+            "t_ms": 165669
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1644,
+      "timestamp_ms": 165685,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1190,
+            "y": 344,
+            "t_ms": 165669
+          },
+          {
+            "x": 1204,
+            "y": 347,
+            "t_ms": 165685
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1645,
+      "timestamp_ms": 165699,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1204,
+            "y": 347,
+            "t_ms": 165685
+          },
+          {
+            "x": 1214,
+            "y": 349,
+            "t_ms": 165699
+          }
+        ],
+        "target_element": "[data-log-id='promo-input']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 350,
+          "width": 228,
+          "height": 38
+        }
+      }
+    },
+    {
+      "event_id": 1646,
+      "timestamp_ms": 165731,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1214,
+            "y": 349,
+            "t_ms": 165699
+          },
+          {
+            "x": 1226,
+            "y": 352,
+            "t_ms": 165731
+          }
+        ],
+        "target_element": "[data-log-id='promo-input']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 350,
+          "width": 228,
+          "height": 38
+        }
+      }
+    },
+    {
+      "event_id": 1647,
+      "timestamp_ms": 165758,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1226,
+            "y": 352,
+            "t_ms": 165731
+          },
+          {
+            "x": 1236,
+            "y": 357,
+            "t_ms": 165758
+          }
+        ],
+        "target_element": "[data-log-id='promo-input']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 350,
+          "width": 228,
+          "height": 38
+        }
+      }
+    },
+    {
+      "event_id": 1648,
+      "timestamp_ms": 165799,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1236,
+            "y": 357,
+            "t_ms": 165758
+          },
+          {
+            "x": 1239,
+            "y": 369,
+            "t_ms": 165799
+          }
+        ],
+        "target_element": "[data-log-id='promo-input']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 350,
+          "width": 228,
+          "height": 38
+        }
+      }
+    },
+    {
+      "event_id": 1649,
+      "timestamp_ms": 165817,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1239,
+            "y": 369,
+            "t_ms": 165799
+          },
+          {
+            "x": 1240,
+            "y": 379,
+            "t_ms": 165817
+          }
+        ],
+        "target_element": "[data-log-id='promo-input']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 350,
+          "width": 228,
+          "height": 38
+        }
+      }
+    },
+    {
+      "event_id": 1650,
+      "timestamp_ms": 165845,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1240,
+            "y": 379,
+            "t_ms": 165817
+          },
+          {
+            "x": 1243,
+            "y": 391,
+            "t_ms": 165845
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1651,
+      "timestamp_ms": 165865,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1243,
+            "y": 391,
+            "t_ms": 165845
+          },
+          {
+            "x": 1245,
+            "y": 401,
+            "t_ms": 165865
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1652,
+      "timestamp_ms": 165911,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1245,
+            "y": 401,
+            "t_ms": 165865
+          },
+          {
+            "x": 1248,
+            "y": 411,
+            "t_ms": 165911
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 1156,
+          "y": 118,
+          "width": 380,
+          "height": 420
+        }
+      }
+    },
+    {
+      "event_id": 1653,
+      "timestamp_ms": 165963,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 1248,
+            "y": 411,
+            "t_ms": 165911
+          },
+          {
+            "x": 1250,
+            "y": 416,
+            "t_ms": 165963
+          }
+        ],
+        "target_element": "[data-log-id='proceed-checkout']",
+        "target_bbox": {
+          "x": 1196,
+          "y": 412,
+          "width": 300,
+          "height": 52
+        }
+      }
+    },
+    {
+      "event_id": 1654,
+      "timestamp_ms": 166208,
+      "type": "mousedown",
+      "data": {
+        "x": 1250,
+        "y": 416,
+        "target_element": "[data-log-id='proceed-checkout']",
+        "button": "left"
+      }
+    }
+  ]
+}
