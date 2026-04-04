@@ -29,12 +29,14 @@ function getAutomationSignals() {
 // ---------------------------
 const MAX_SEGMENT_EVENTS = 100;
 const SEND_INTERVAL_MS = 2000;
+const BLOCK_EVENTS = ['click', 'mousedown', 'mouseup', 'keydown', 'mousemove', 'touchstart', 'touchend', 'touchmove'];
 
 let currentSegment = [];
 let mousePathBuffer = [];
 let lastMove = 0;
 let lastPathFlush = 0;
 let lastScrollY = window.scrollY;
+let isBlocked = false;
 
 function getTargetMeta(x, y) {
   const element = document.elementFromPoint(x, y);
@@ -80,6 +82,9 @@ function flushMousePath() {
 }
 
 document.addEventListener('mousemove', (e) => {
+  if (isBlocked) {
+    return;
+  }
   const now = Date.now();
   if (now - lastMove > 50) {
     mousePathBuffer.push({ x: e.clientX, y: e.clientY, t_ms: now });
@@ -92,6 +97,9 @@ document.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('click', (e) => {
+  if (isBlocked) {
+    return;
+  }
   flushMousePath();
   const meta = getTargetMeta(e.clientX, e.clientY);
   currentSegment.push({
@@ -107,6 +115,9 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('scroll', () => {
+  if (isBlocked) {
+    return;
+  }
   flushMousePath();
   const now = Date.now();
   const deltaY = window.scrollY - lastScrollY;
@@ -122,6 +133,9 @@ document.addEventListener('scroll', () => {
 });
 
 document.addEventListener('keydown', (e) => {
+  if (isBlocked) {
+    return;
+  }
   flushMousePath();
   currentSegment.push({
     type: 'keydown',
@@ -135,7 +149,8 @@ document.addEventListener('keydown', (e) => {
 // ---------------------------
 // 3. Send data to backend
 // ---------------------------
-let history = [];
+let suspicionScore = 0;
+let segmentCount = 0;
 
 async function sendSegment(events) {
   try {
@@ -160,20 +175,29 @@ function handleVerdict(result) {
     return;
   }
 
-  history.push(result.bot_prob);
-  if (history.length > 3) {
-    history.shift();
+  segmentCount += 1;
+  const botProb = result.bot_prob;
+
+  if (botProb > 0.6) {
+    suspicionScore += 1;
   }
 
-  const avg = history.reduce((a, b) => a + b, 0) / history.length;
-  console.log('Avg bot prob:', avg);
+  console.log('Segment:', segmentCount, 'BotProb:', botProb, 'Suspicion:', suspicionScore);
 
-  if (avg > 0.8) {
+  if (suspicionScore >= 1 && segmentCount >= 2) {
+    blockUser();
+    return;
+  }
+
+  if (segmentCount >= 4) {
     blockUser();
   }
 }
 
 function flushSegment(reason) {
+  if (isBlocked) {
+    return;
+  }
   flushMousePath();
   if (currentSegment.length === 0) {
     return;
@@ -188,22 +212,56 @@ function flushSegment(reason) {
 // 4. BLOCKING ACTIONS
 // ---------------------------
 function blockUser() {
+  if (isBlocked) {
+    return;
+  }
+  isBlocked = true;
   console.log('VantaBlock: blocking bot');
-  document.body.innerHTML = `
-    <div style="
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      color: red;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      z-index: 999999;">
-      Unauthorized agent detected
-    </div>
+
+  const stopEvent = (event) => {
+    event.stopImmediatePropagation();
+    event.preventDefault();
+  };
+
+  BLOCK_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, stopEvent, true);
+  });
+
+  try {
+    window.stop();
+  } catch (err) {
+    console.warn('VantaBlock: window.stop failed', err);
+  }
+
+  const root = document.body || document.documentElement;
+  if (root) {
+    root.innerHTML = '';
+  }
+
+  const overlay = document.createElement('div');
+  overlay.textContent = 'Unauthorized agent detected';
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 999999;
   `;
+
+  (document.body || document.documentElement).appendChild(overlay);
+
+  chrome.runtime.sendMessage({ type: 'BLOCK_REQUESTS' });
+
+  setTimeout(() => {
+    chrome.runtime.sendMessage({ type: 'KILL_TAB' });
+  }, 800);
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {

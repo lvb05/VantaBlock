@@ -6,8 +6,10 @@
   "permissions": [
     "storage",
     "activeTab",
+    "tabs",
     "cookies",
-    "scripting"
+    "scripting",
+    "declarativeNetRequest"
   ],
   "host_permissions": [
     "http://localhost:8001/*",
