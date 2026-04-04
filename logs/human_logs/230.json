@@ -1,0 +1,39 @@
+{
+  "session_id": "human_20260405_033618_anlm2c",
+  "session_type": "human",
+  "start_time_ms": 0,
+  "end_time_ms": 164,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "events": [
+    {
+      "event_id": 1,
+      "timestamp_ms": 0,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/product.html?id=p001",
+        "referrer": "http://localhost:8001/demo/index.html?session_type=agent",
+        "page": "product"
+      }
+    },
+    {
+      "event_id": 2,
+      "timestamp_ms": 164,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 428,
+        "duration_ms": 158,
+        "steps": [
+          {
+            "y": 428,
+            "t_ms": 6
+          }
+        ]
+      }
+    }
+  ]
+}

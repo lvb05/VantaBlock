@@ -1,0 +1,326 @@
+{
+  "session_id": "agent_20260405_033244_hoxleg",
+  "session_type": "agent",
+  "start_time_ms": 0,
+  "end_time_ms": 2075,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "events": [
+    {
+      "event_id": 1,
+      "timestamp_ms": 0,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/index.html?session_type=agent",
+        "referrer": "",
+        "page": "listings"
+      }
+    },
+    {
+      "event_id": 2,
+      "timestamp_ms": 1013,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 218,
+        "duration_ms": 151,
+        "steps": [
+          {
+            "y": 218,
+            "t_ms": 862
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 3,
+      "timestamp_ms": 1353,
+      "type": "scroll",
+      "data": {
+        "start_y": 218,
+        "end_y": 520,
+        "duration_ms": 296,
+        "steps": [
+          {
+            "y": 339,
+            "t_ms": 1057
+          },
+          {
+            "y": 520,
+            "t_ms": 1202
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 4,
+      "timestamp_ms": 1506,
+      "type": "scroll",
+      "data": {
+        "start_y": 520,
+        "end_y": 680,
+        "duration_ms": 151,
+        "steps": [
+          {
+            "y": 680,
+            "t_ms": 1355
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 5,
+      "timestamp_ms": 1626,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 639,
+            "y": 400,
+            "t_ms": 1582
+          },
+          {
+            "x": 634,
+            "y": 396,
+            "t_ms": 1626
+          }
+        ],
+        "target_element": "[data-log-id='card-p007']",
+        "target_bbox": {
+          "x": 633,
+          "y": 139,
+          "width": 315,
+          "height": 404
+        }
+      }
+    },
+    {
+      "event_id": 6,
+      "timestamp_ms": 1668,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 634,
+            "y": 396,
+            "t_ms": 1626
+          },
+          {
+            "x": 621,
+            "y": 388,
+            "t_ms": 1668
+          }
+        ],
+        "target_element": "[data-log-id='card-p006']",
+        "target_bbox": {
+          "x": 316,
+          "y": 139,
+          "width": 315,
+          "height": 404
+        }
+      }
+    },
+    {
+      "event_id": 7,
+      "timestamp_ms": 1710,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 621,
+            "y": 388,
+            "t_ms": 1668
+          },
+          {
+            "x": 600,
+            "y": 375,
+            "t_ms": 1710
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 367,
+          "width": 259,
+          "height": 14
+        }
+      }
+    },
+    {
+      "event_id": 8,
+      "timestamp_ms": 1751,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 600,
+            "y": 375,
+            "t_ms": 1710
+          },
+          {
+            "x": 577,
+            "y": 360,
+            "t_ms": 1751
+          }
+        ],
+        "target_element": "[data-log-id='card-p006']",
+        "target_bbox": {
+          "x": 316,
+          "y": 139,
+          "width": 315,
+          "height": 404
+        }
+      }
+    },
+    {
+      "event_id": 9,
+      "timestamp_ms": 1793,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 577,
+            "y": 360,
+            "t_ms": 1751
+          },
+          {
+            "x": 554,
+            "y": 344,
+            "t_ms": 1793
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 167,
+          "width": 259,
+          "height": 180
+        }
+      }
+    },
+    {
+      "event_id": 10,
+      "timestamp_ms": 1835,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 554,
+            "y": 344,
+            "t_ms": 1793
+          },
+          {
+            "x": 529,
+            "y": 329,
+            "t_ms": 1835
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 167,
+          "width": 259,
+          "height": 180
+        }
+      }
+    },
+    {
+      "event_id": 11,
+      "timestamp_ms": 1877,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 529,
+            "y": 329,
+            "t_ms": 1835
+          },
+          {
+            "x": 511,
+            "y": 317,
+            "t_ms": 1877
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 167,
+          "width": 259,
+          "height": 180
+        }
+      }
+    },
+    {
+      "event_id": 12,
+      "timestamp_ms": 1918,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 511,
+            "y": 317,
+            "t_ms": 1877
+          },
+          {
+            "x": 496,
+            "y": 308,
+            "t_ms": 1918
+          }
+        ],
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 167,
+          "width": 259,
+          "height": 180
+        }
+      }
+    },
+    {
+      "event_id": 13,
+      "timestamp_ms": 1960,
+      "type": "mousedown",
+      "data": {
+        "x": 491,
+        "y": 304,
+        "target_element": "div",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 14,
+      "timestamp_ms": 2075,
+      "type": "mouseup",
+      "data": {
+        "x": 491,
+        "y": 304,
+        "target_element": "div",
+        "button": "left",
+        "hold_duration_ms": 115
+      }
+    },
+    {
+      "event_id": 15,
+      "timestamp_ms": 2075,
+      "type": "click",
+      "data": {
+        "x": 491,
+        "y": 304,
+        "target_element": "div",
+        "target_bbox": {
+          "x": 344,
+          "y": 167,
+          "width": 259,
+          "height": 180
+        },
+        "offset_from_center": {
+          "dx": 18,
+          "dy": 47
+        }
+      }
+    }
+  ]
+}

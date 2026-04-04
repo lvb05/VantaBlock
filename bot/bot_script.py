@@ -559,7 +559,7 @@ def main():
     parser.add_argument(
         "--iterations",
         type=int,
-        default=3,
+        default=1,
         help="Number of complete purchase iterations inside each session",
     )
     parser.add_argument("--products", nargs="*", help="Optional product names to target")
