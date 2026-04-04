@@ -1,11 +1,14 @@
 import json
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
+from typing import Any, Dict, List
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+import joblib
 
 app = FastAPI()
 
@@ -18,6 +21,9 @@ app.add_middleware(
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(BASE_DIR))
+from Pipeline.feature_extractor import FeatureExtractor
+
 LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -31,6 +37,33 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 app.mount("/demo", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{8,128}$")
+
+MODEL_DIR = BASE_DIR / "models"
+MODEL_PATH = MODEL_DIR / "best_model.pkl"
+SCALER_PATH = MODEL_DIR / "scaler.pkl"
+METADATA_PATH = MODEL_DIR / "model_metadata.pkl"
+
+
+def load_model_artifacts() -> tuple[Any, Any, Dict[str, Any], List[str]]:
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+    metadata = joblib.load(METADATA_PATH)
+    feature_names = metadata.get("feature_names", [])
+    if not feature_names:
+        raise ValueError("model_metadata.pkl is missing feature_names")
+    return model, scaler, metadata, feature_names
+
+
+FEATURE_EXTRACTOR = FeatureExtractor()
+MODEL_LOAD_ERROR = None
+try:
+    MODEL, SCALER, METADATA, FEATURE_NAMES = load_model_artifacts()
+except Exception as exc:
+    MODEL = None
+    SCALER = None
+    METADATA = {}
+    FEATURE_NAMES = []
+    MODEL_LOAD_ERROR = str(exc)
 
 
 def next_log_index(log_dir: Path) -> int:
@@ -73,6 +106,17 @@ def validate_payload(payload: dict) -> None:
     vp = payload.get("viewport", {})
     if not isinstance(vp, dict) or "width" not in vp or "height" not in vp:
         raise HTTPException(status_code=400, detail="viewport must contain width and height")
+
+
+def build_feature_vector(events: List[Dict[str, Any]]) -> List[float]:
+    features = FEATURE_EXTRACTOR.extract_features_from_events(events)
+    if not features:
+        raise HTTPException(status_code=400, detail="No usable events provided")
+
+    try:
+        return [float(features[name]) for name in FEATURE_NAMES]
+    except KeyError as exc:
+        raise HTTPException(status_code=500, detail=f"Missing feature in extractor output: {exc}")
 
 
 @app.post("/api/logs")
@@ -119,6 +163,34 @@ async def receive_session_log(request: Request):
         "session_id": session_id,
         "file": out_path.name,
         "events": len(payload["events"]),
+    }
+
+
+@app.post("/predict")
+async def predict(payload: Dict[str, Any]):
+    if MODEL is None:
+        raise HTTPException(status_code=500, detail=f"Model not loaded: {MODEL_LOAD_ERROR}")
+
+    events = payload.get("events")
+    if not isinstance(events, list):
+        raise HTTPException(status_code=400, detail="events must be an array")
+
+    feature_vector = build_feature_vector(events)
+    features_scaled = SCALER.transform([feature_vector])
+
+    if hasattr(MODEL, "predict_proba"):
+        probs = MODEL.predict_proba(features_scaled)[0]
+        class_to_prob = {int(cls): float(prob) for cls, prob in zip(MODEL.classes_, probs)}
+        human_prob = class_to_prob.get(1, 0.0)
+        bot_prob = class_to_prob.get(0, 0.0)
+    else:
+        prediction = int(MODEL.predict(features_scaled)[0])
+        human_prob = float(prediction)
+        bot_prob = float(1 - prediction)
+
+    return {
+        "human_prob": human_prob,
+        "bot_prob": bot_prob,
     }
 
 

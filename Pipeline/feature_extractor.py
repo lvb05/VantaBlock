@@ -144,6 +144,20 @@ class FeatureExtractor:
         backspaces = sum(1 for e in keydown_events if e.get("data", {}).get("key") == "Backspace")
         return float(backspaces / len(keydown_events))
 
+    def extract_features_from_events(self, events: List[Dict[str, Any]]) -> Dict[str, Any]:
+        if not events:
+            return {}
+
+        return {
+            "time_to_first_action": self.time_to_first_action(events),
+            "inter_event_std": self.inter_event_std(events),
+            "path_efficiency": self.path_efficiency(events),
+            "velocity_variance": self.velocity_variance(events),
+            "hover_time_before_click": self.hover_time_before_click(events),
+            "scroll_variance": self.scroll_variance(events),
+            "error_behavior": self.error_behavior(events),
+        }
+
     def extract_features_from_segment(self, segment_data: Dict[str, Any]) -> Dict[str, Any]:
         events = segment_data.get("events", [])
         if not events:
@@ -155,17 +169,13 @@ class FeatureExtractor:
 
         is_human = 1 if raw_label == "human" else 0
 
-        return {
-            "segment_id": segment_data.get("segment_id") or segment_data.get("session_id") or "",
-            "is_human": is_human,
-            "time_to_first_action": self.time_to_first_action(events),
-            "inter_event_std": self.inter_event_std(events),
-            "path_efficiency": self.path_efficiency(events),
-            "velocity_variance": self.velocity_variance(events),
-            "hover_time_before_click": self.hover_time_before_click(events),
-            "scroll_variance": self.scroll_variance(events),
-            "error_behavior": self.error_behavior(events),
-        }
+        features = self.extract_features_from_events(events)
+        if not features:
+            return {}
+
+        features["segment_id"] = segment_data.get("segment_id") or segment_data.get("session_id") or ""
+        features["is_human"] = is_human
+        return features
 
     def process_dataset(self, dataset_path: str) -> List[Dict[str, Any]]:
         dataset_dir = Path(dataset_path)

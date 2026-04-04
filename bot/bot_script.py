@@ -18,6 +18,8 @@ from playwright.sync_api import sync_playwright
 BASE_URL = "http://localhost:8001/demo"
 API_LOG_ENDPOINT = "http://localhost:8001/api/logs"
 VIEWPORT = {"width": 1280, "height": 800}
+EXTENSION_DIR = Path(__file__).resolve().parent.parent / "vantablock-extension"
+USER_DATA_DIR = Path(__file__).resolve().parent / ".user-data"
 
 PRODUCT_CHECKLIST = [
     "SoundPeak Pro X",
@@ -493,14 +495,24 @@ def run_bot_session(targets=None, iterations=3, push_backend=False):
     print(f"\n[Bot] Session start. Purchase iterations: {iterations}")
 
     ensure_backend_available(BASE_URL)
+    if not EXTENSION_DIR.exists():
+        raise SystemExit(f"Extension not found at {EXTENSION_DIR}")
     bot_log_dir = Path(__file__).resolve().parent.parent / "logs" / "bot_logs"
     bot_log_dir.mkdir(parents=True, exist_ok=True)
     start_index = next_log_index(bot_log_dir)
     print(f"[Bot] Saving iteration files from index {start_index}")
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context(viewport=VIEWPORT)
+        USER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+        context = p.chromium.launch_persistent_context(
+            user_data_dir=str(USER_DATA_DIR),
+            headless=False,
+            args=[
+                f"--disable-extensions-except={EXTENSION_DIR}",
+                f"--load-extension={EXTENSION_DIR}",
+            ],
+            viewport=VIEWPORT,
+        )
         page = context.new_page()
         page.on("dialog", lambda dialog: dialog.accept())
 
@@ -536,7 +548,7 @@ def run_bot_session(targets=None, iterations=3, push_backend=False):
             if iteration_index < iterations - 1:
                 time.sleep(random.uniform(0.8, 2.0))
 
-        browser.close()
+        context.close()
 
     print("[Bot] Session complete.")
 
