@@ -1,4 +1,6 @@
-# MockShop Behavioural Logging (Unified Schema)
+# VantaBlock 
+
+## MockShop Behavioural Logging (Unified Schema)
 
 This workspace collects comparable behavioural data for human and agent sessions.
 
