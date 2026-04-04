@@ -1,0 +1,1158 @@
+{
+  "session_id": "agent_20260404_133115_b3azb9_iter18",
+  "session_type": "agent",
+  "start_time_ms": 0,
+  "end_time_ms": 17165,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "events": [
+    {
+      "event_id": 1,
+      "timestamp_ms": 65,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/index.html?session_type=agent",
+        "referrer": ""
+      }
+    },
+    {
+      "event_id": 2,
+      "timestamp_ms": 1093,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 370,
+        "duration_ms": 481,
+        "steps": [
+          {
+            "y": 160,
+            "t_ms": 774
+          },
+          {
+            "y": 421,
+            "t_ms": 918
+          },
+          {
+            "y": 370,
+            "t_ms": 1091
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 3,
+      "timestamp_ms": 1629,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 640,
+            "y": 400,
+            "t_ms": 1136
+          },
+          {
+            "x": 638,
+            "y": 402,
+            "t_ms": 1168
+          },
+          {
+            "x": 633,
+            "y": 408,
+            "t_ms": 1186
+          },
+          {
+            "x": 623,
+            "y": 417,
+            "t_ms": 1217
+          },
+          {
+            "x": 613,
+            "y": 429,
+            "t_ms": 1243
+          },
+          {
+            "x": 599,
+            "y": 444,
+            "t_ms": 1271
+          },
+          {
+            "x": 584,
+            "y": 460,
+            "t_ms": 1300
+          },
+          {
+            "x": 568,
+            "y": 479,
+            "t_ms": 1324
+          },
+          {
+            "x": 548,
+            "y": 497,
+            "t_ms": 1351
+          },
+          {
+            "x": 528,
+            "y": 518,
+            "t_ms": 1379
+          },
+          {
+            "x": 511,
+            "y": 538,
+            "t_ms": 1407
+          },
+          {
+            "x": 492,
+            "y": 559,
+            "t_ms": 1435
+          },
+          {
+            "x": 474,
+            "y": 576,
+            "t_ms": 1462
+          },
+          {
+            "x": 458,
+            "y": 595,
+            "t_ms": 1490
+          },
+          {
+            "x": 442,
+            "y": 612,
+            "t_ms": 1513
+          },
+          {
+            "x": 429,
+            "y": 626,
+            "t_ms": 1539
+          },
+          {
+            "x": 417,
+            "y": 638,
+            "t_ms": 1562
+          },
+          {
+            "x": 409,
+            "y": 647,
+            "t_ms": 1587
+          },
+          {
+            "x": 403,
+            "y": 653,
+            "t_ms": 1605
+          },
+          {
+            "x": 402,
+            "y": 655,
+            "t_ms": 1629
+          }
+        ],
+        "target_element": "[data-log-id='card-p006']",
+        "target_bbox": {
+          "x": 316,
+          "y": 448,
+          "width": 315,
+          "height": 404
+        }
+      }
+    },
+    {
+      "event_id": 4,
+      "timestamp_ms": 1629,
+      "type": "mousedown",
+      "data": {
+        "x": 401,
+        "y": 655,
+        "target_element": "[data-log-id='card-p006']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 5,
+      "timestamp_ms": 1848,
+      "type": "mouseup",
+      "data": {
+        "x": 401,
+        "y": 655,
+        "target_element": "[data-log-id='card-p006']",
+        "button": "left",
+        "hold_duration_ms": 219
+      }
+    },
+    {
+      "event_id": 6,
+      "timestamp_ms": 1848,
+      "type": "click",
+      "data": {
+        "x": 401,
+        "y": 655,
+        "target_element": "[data-log-id='card-p006']",
+        "target_bbox": {
+          "x": 316,
+          "y": 448,
+          "width": 315,
+          "height": 404
+        },
+        "offset_from_center": {
+          "dx": -72,
+          "dy": 5
+        }
+      }
+    },
+    {
+      "event_id": 7,
+      "timestamp_ms": 1850,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/index.html?session_type=agent",
+        "referrer": "http://localhost:8001/demo/index.html?session_type=agent"
+      }
+    },
+    {
+      "event_id": 8,
+      "timestamp_ms": 3143,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 651,
+        "duration_ms": 558,
+        "steps": [
+          {
+            "y": 231,
+            "t_ms": 2713
+          },
+          {
+            "y": 443,
+            "t_ms": 2885
+          },
+          {
+            "y": 651,
+            "t_ms": 2995
+          },
+          {
+            "y": 651,
+            "t_ms": 3141
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 9,
+      "timestamp_ms": 4096,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 401,
+            "y": 655,
+            "t_ms": 3172
+          },
+          {
+            "x": 402,
+            "y": 653,
+            "t_ms": 3199
+          },
+          {
+            "x": 405,
+            "y": 650,
+            "t_ms": 3216
+          },
+          {
+            "x": 409,
+            "y": 645,
+            "t_ms": 3240
+          },
+          {
+            "x": 415,
+            "y": 638,
+            "t_ms": 3258
+          },
+          {
+            "x": 422,
+            "y": 629,
+            "t_ms": 3285
+          },
+          {
+            "x": 430,
+            "y": 619,
+            "t_ms": 3309
+          },
+          {
+            "x": 441,
+            "y": 607,
+            "t_ms": 3331
+          },
+          {
+            "x": 452,
+            "y": 594,
+            "t_ms": 3353
+          },
+          {
+            "x": 463,
+            "y": 579,
+            "t_ms": 3378
+          },
+          {
+            "x": 478,
+            "y": 563,
+            "t_ms": 3404
+          },
+          {
+            "x": 492,
+            "y": 546,
+            "t_ms": 3427
+          },
+          {
+            "x": 506,
+            "y": 527,
+            "t_ms": 3449
+          },
+          {
+            "x": 522,
+            "y": 509,
+            "t_ms": 3471
+          },
+          {
+            "x": 538,
+            "y": 491,
+            "t_ms": 3497
+          },
+          {
+            "x": 555,
+            "y": 470,
+            "t_ms": 3519
+          },
+          {
+            "x": 573,
+            "y": 448,
+            "t_ms": 3544
+          },
+          {
+            "x": 591,
+            "y": 428,
+            "t_ms": 3566
+          },
+          {
+            "x": 608,
+            "y": 407,
+            "t_ms": 3588
+          },
+          {
+            "x": 627,
+            "y": 383,
+            "t_ms": 3610
+          },
+          {
+            "x": 645,
+            "y": 361,
+            "t_ms": 3636
+          },
+          {
+            "x": 665,
+            "y": 341,
+            "t_ms": 3661
+          },
+          {
+            "x": 681,
+            "y": 318,
+            "t_ms": 3684
+          },
+          {
+            "x": 699,
+            "y": 297,
+            "t_ms": 3706
+          },
+          {
+            "x": 716,
+            "y": 275,
+            "t_ms": 3729
+          },
+          {
+            "x": 736,
+            "y": 255,
+            "t_ms": 3754
+          },
+          {
+            "x": 751,
+            "y": 234,
+            "t_ms": 3775
+          },
+          {
+            "x": 768,
+            "y": 214,
+            "t_ms": 3798
+          },
+          {
+            "x": 784,
+            "y": 195,
+            "t_ms": 3823
+          },
+          {
+            "x": 798,
+            "y": 179,
+            "t_ms": 3845
+          },
+          {
+            "x": 813,
+            "y": 159,
+            "t_ms": 3867
+          },
+          {
+            "x": 826,
+            "y": 145,
+            "t_ms": 3893
+          },
+          {
+            "x": 838,
+            "y": 130,
+            "t_ms": 3915
+          },
+          {
+            "x": 849,
+            "y": 117,
+            "t_ms": 3937
+          },
+          {
+            "x": 859,
+            "y": 105,
+            "t_ms": 3962
+          },
+          {
+            "x": 868,
+            "y": 94,
+            "t_ms": 3984
+          },
+          {
+            "x": 875,
+            "y": 86,
+            "t_ms": 4009
+          },
+          {
+            "x": 880,
+            "y": 79,
+            "t_ms": 4026
+          },
+          {
+            "x": 885,
+            "y": 73,
+            "t_ms": 4053
+          },
+          {
+            "x": 888,
+            "y": 70,
+            "t_ms": 4075
+          },
+          {
+            "x": 889,
+            "y": 69,
+            "t_ms": 4096
+          }
+        ],
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 680,
+          "y": 40,
+          "width": 392,
+          "height": 54
+        }
+      }
+    },
+    {
+      "event_id": 10,
+      "timestamp_ms": 4096,
+      "type": "mousedown",
+      "data": {
+        "x": 889,
+        "y": 69,
+        "target_element": "[data-log-id='add-to-cart']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 11,
+      "timestamp_ms": 4248,
+      "type": "mouseup",
+      "data": {
+        "x": 889,
+        "y": 69,
+        "target_element": "[data-log-id='add-to-cart']",
+        "button": "left",
+        "hold_duration_ms": 152
+      }
+    },
+    {
+      "event_id": 12,
+      "timestamp_ms": 4248,
+      "type": "click",
+      "data": {
+        "x": 889,
+        "y": 69,
+        "target_element": "[data-log-id='add-to-cart']",
+        "target_bbox": {
+          "x": 680,
+          "y": 40,
+          "width": 392,
+          "height": 54
+        },
+        "offset_from_center": {
+          "dx": 13,
+          "dy": 2
+        }
+      }
+    },
+    {
+      "event_id": 13,
+      "timestamp_ms": 5354,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/index.html?session_type=agent",
+        "referrer": ""
+      }
+    },
+    {
+      "event_id": 14,
+      "timestamp_ms": 6922,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 458,
+        "duration_ms": 942,
+        "steps": [
+          {
+            "y": 88,
+            "t_ms": 6099
+          },
+          {
+            "y": 208,
+            "t_ms": 6238
+          },
+          {
+            "y": 347,
+            "t_ms": 6398
+          },
+          {
+            "y": 487,
+            "t_ms": 6575
+          },
+          {
+            "y": 560,
+            "t_ms": 6792
+          },
+          {
+            "y": 458,
+            "t_ms": 6920
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 15,
+      "timestamp_ms": 8001,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 889,
+            "y": 69,
+            "t_ms": 6978
+          },
+          {
+            "x": 888,
+            "y": 71,
+            "t_ms": 7002
+          },
+          {
+            "x": 886,
+            "y": 75,
+            "t_ms": 7020
+          },
+          {
+            "x": 882,
+            "y": 83,
+            "t_ms": 7045
+          },
+          {
+            "x": 877,
+            "y": 94,
+            "t_ms": 7073
+          },
+          {
+            "x": 871,
+            "y": 107,
+            "t_ms": 7101
+          },
+          {
+            "x": 864,
+            "y": 122,
+            "t_ms": 7129
+          },
+          {
+            "x": 854,
+            "y": 140,
+            "t_ms": 7157
+          },
+          {
+            "x": 845,
+            "y": 160,
+            "t_ms": 7184
+          },
+          {
+            "x": 833,
+            "y": 182,
+            "t_ms": 7217
+          },
+          {
+            "x": 823,
+            "y": 206,
+            "t_ms": 7247
+          },
+          {
+            "x": 810,
+            "y": 232,
+            "t_ms": 7275
+          },
+          {
+            "x": 796,
+            "y": 258,
+            "t_ms": 7301
+          },
+          {
+            "x": 784,
+            "y": 286,
+            "t_ms": 7328
+          },
+          {
+            "x": 769,
+            "y": 316,
+            "t_ms": 7354
+          },
+          {
+            "x": 754,
+            "y": 345,
+            "t_ms": 7381
+          },
+          {
+            "x": 739,
+            "y": 377,
+            "t_ms": 7410
+          },
+          {
+            "x": 723,
+            "y": 409,
+            "t_ms": 7435
+          },
+          {
+            "x": 707,
+            "y": 440,
+            "t_ms": 7463
+          },
+          {
+            "x": 694,
+            "y": 474,
+            "t_ms": 7491
+          },
+          {
+            "x": 677,
+            "y": 505,
+            "t_ms": 7519
+          },
+          {
+            "x": 660,
+            "y": 541,
+            "t_ms": 7550
+          },
+          {
+            "x": 646,
+            "y": 572,
+            "t_ms": 7577
+          },
+          {
+            "x": 630,
+            "y": 605,
+            "t_ms": 7606
+          },
+          {
+            "x": 614,
+            "y": 637,
+            "t_ms": 7639
+          },
+          {
+            "x": 599,
+            "y": 667,
+            "t_ms": 7663
+          },
+          {
+            "x": 584,
+            "y": 698,
+            "t_ms": 7695
+          },
+          {
+            "x": 570,
+            "y": 727,
+            "t_ms": 7722
+          },
+          {
+            "x": 557,
+            "y": 755,
+            "t_ms": 7751
+          },
+          {
+            "x": 543,
+            "y": 782,
+            "t_ms": 7778
+          },
+          {
+            "x": 530,
+            "y": 807,
+            "t_ms": 7798
+          },
+          {
+            "x": 519,
+            "y": 830,
+            "t_ms": 7819
+          },
+          {
+            "x": 508,
+            "y": 853,
+            "t_ms": 7839
+          },
+          {
+            "x": 499,
+            "y": 873,
+            "t_ms": 7860
+          },
+          {
+            "x": 490,
+            "y": 891,
+            "t_ms": 7881
+          },
+          {
+            "x": 483,
+            "y": 906,
+            "t_ms": 7902
+          },
+          {
+            "x": 476,
+            "y": 919,
+            "t_ms": 7923
+          },
+          {
+            "x": 471,
+            "y": 930,
+            "t_ms": 7943
+          },
+          {
+            "x": 467,
+            "y": 937,
+            "t_ms": 7965
+          },
+          {
+            "x": 465,
+            "y": 942,
+            "t_ms": 7982
+          },
+          {
+            "x": 465,
+            "y": 944,
+            "t_ms": 8001
+          }
+        ],
+        "target_element": "[data-log-id='card-p010']",
+        "target_bbox": {
+          "x": 316,
+          "y": 765,
+          "width": 315,
+          "height": 404
+        }
+      }
+    },
+    {
+      "event_id": 16,
+      "timestamp_ms": 8001,
+      "type": "mousedown",
+      "data": {
+        "x": 464,
+        "y": 944,
+        "target_element": "[data-log-id='card-p010']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 17,
+      "timestamp_ms": 8145,
+      "type": "mouseup",
+      "data": {
+        "x": 464,
+        "y": 944,
+        "target_element": "[data-log-id='card-p010']",
+        "button": "left",
+        "hold_duration_ms": 144
+      }
+    },
+    {
+      "event_id": 18,
+      "timestamp_ms": 8145,
+      "type": "click",
+      "data": {
+        "x": 464,
+        "y": 944,
+        "target_element": "[data-log-id='card-p010']",
+        "target_bbox": {
+          "x": 316,
+          "y": 765,
+          "width": 315,
+          "height": 404
+        },
+        "offset_from_center": {
+          "dx": -9,
+          "dy": -23
+        }
+      }
+    },
+    {
+      "event_id": 19,
+      "timestamp_ms": 8147,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/index.html?session_type=agent",
+        "referrer": "http://localhost:8001/demo/index.html?session_type=agent"
+      }
+    },
+    {
+      "event_id": 20,
+      "timestamp_ms": 9355,
+      "type": "scroll",
+      "data": {
+        "start_y": 458,
+        "end_y": 1228,
+        "duration_ms": 551,
+        "steps": [
+          {
+            "y": 701,
+            "t_ms": 8902
+          },
+          {
+            "y": 919,
+            "t_ms": 9037
+          },
+          {
+            "y": 1020,
+            "t_ms": 9138
+          },
+          {
+            "y": 1228,
+            "t_ms": 9354
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 21,
+      "timestamp_ms": 11109,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/cart.html?session_type=agent",
+        "referrer": "http://localhost:8001/demo/index.html?session_type=agent"
+      }
+    },
+    {
+      "event_id": 22,
+      "timestamp_ms": 12071,
+      "type": "scroll",
+      "data": {
+        "start_y": 0,
+        "end_y": 0,
+        "duration_ms": 471,
+        "steps": [
+          {
+            "y": 0,
+            "t_ms": 11739
+          },
+          {
+            "y": 0,
+            "t_ms": 11963
+          },
+          {
+            "y": 0,
+            "t_ms": 12069
+          }
+        ]
+      }
+    },
+    {
+      "event_id": 23,
+      "timestamp_ms": 12957,
+      "type": "mousemove",
+      "data": {
+        "path": [
+          {
+            "x": 464,
+            "y": 944,
+            "t_ms": 12096
+          },
+          {
+            "x": 466,
+            "y": 943,
+            "t_ms": 12117
+          },
+          {
+            "x": 470,
+            "y": 940,
+            "t_ms": 12138
+          },
+          {
+            "x": 475,
+            "y": 936,
+            "t_ms": 12159
+          },
+          {
+            "x": 484,
+            "y": 930,
+            "t_ms": 12179
+          },
+          {
+            "x": 494,
+            "y": 922,
+            "t_ms": 12201
+          },
+          {
+            "x": 506,
+            "y": 914,
+            "t_ms": 12221
+          },
+          {
+            "x": 521,
+            "y": 903,
+            "t_ms": 12242
+          },
+          {
+            "x": 536,
+            "y": 892,
+            "t_ms": 12263
+          },
+          {
+            "x": 554,
+            "y": 880,
+            "t_ms": 12284
+          },
+          {
+            "x": 573,
+            "y": 865,
+            "t_ms": 12306
+          },
+          {
+            "x": 593,
+            "y": 852,
+            "t_ms": 12325
+          },
+          {
+            "x": 613,
+            "y": 836,
+            "t_ms": 12346
+          },
+          {
+            "x": 637,
+            "y": 820,
+            "t_ms": 12367
+          },
+          {
+            "x": 658,
+            "y": 803,
+            "t_ms": 12388
+          },
+          {
+            "x": 684,
+            "y": 786,
+            "t_ms": 12409
+          },
+          {
+            "x": 708,
+            "y": 769,
+            "t_ms": 12435
+          },
+          {
+            "x": 733,
+            "y": 748,
+            "t_ms": 12455
+          },
+          {
+            "x": 758,
+            "y": 731,
+            "t_ms": 12476
+          },
+          {
+            "x": 784,
+            "y": 714,
+            "t_ms": 12497
+          },
+          {
+            "x": 810,
+            "y": 694,
+            "t_ms": 12517
+          },
+          {
+            "x": 836,
+            "y": 674,
+            "t_ms": 12538
+          },
+          {
+            "x": 863,
+            "y": 656,
+            "t_ms": 12559
+          },
+          {
+            "x": 887,
+            "y": 640,
+            "t_ms": 12580
+          },
+          {
+            "x": 914,
+            "y": 622,
+            "t_ms": 12601
+          },
+          {
+            "x": 937,
+            "y": 603,
+            "t_ms": 12622
+          },
+          {
+            "x": 961,
+            "y": 585,
+            "t_ms": 12642
+          },
+          {
+            "x": 985,
+            "y": 569,
+            "t_ms": 12663
+          },
+          {
+            "x": 1007,
+            "y": 552,
+            "t_ms": 12684
+          },
+          {
+            "x": 1029,
+            "y": 538,
+            "t_ms": 12705
+          },
+          {
+            "x": 1048,
+            "y": 523,
+            "t_ms": 12726
+          },
+          {
+            "x": 1067,
+            "y": 510,
+            "t_ms": 12747
+          },
+          {
+            "x": 1084,
+            "y": 497,
+            "t_ms": 12771
+          },
+          {
+            "x": 1100,
+            "y": 486,
+            "t_ms": 12798
+          },
+          {
+            "x": 1114,
+            "y": 475,
+            "t_ms": 12824
+          },
+          {
+            "x": 1127,
+            "y": 466,
+            "t_ms": 12844
+          },
+          {
+            "x": 1137,
+            "y": 459,
+            "t_ms": 12869
+          },
+          {
+            "x": 1145,
+            "y": 453,
+            "t_ms": 12888
+          },
+          {
+            "x": 1151,
+            "y": 448,
+            "t_ms": 12917
+          },
+          {
+            "x": 1155,
+            "y": 446,
+            "t_ms": 12937
+          },
+          {
+            "x": 1156,
+            "y": 445,
+            "t_ms": 12957
+          }
+        ],
+        "target_element": "[data-log-id='proceed-checkout']",
+        "target_bbox": {
+          "x": 940,
+          "y": 412,
+          "width": 300,
+          "height": 52
+        }
+      }
+    },
+    {
+      "event_id": 24,
+      "timestamp_ms": 12957,
+      "type": "mousedown",
+      "data": {
+        "x": 1156,
+        "y": 445,
+        "target_element": "[data-log-id='proceed-checkout']",
+        "button": "left"
+      }
+    },
+    {
+      "event_id": 25,
+      "timestamp_ms": 13053,
+      "type": "mouseup",
+      "data": {
+        "x": 1156,
+        "y": 445,
+        "target_element": "[data-log-id='proceed-checkout']",
+        "button": "left",
+        "hold_duration_ms": 96
+      }
+    },
+    {
+      "event_id": 26,
+      "timestamp_ms": 13053,
+      "type": "click",
+      "data": {
+        "x": 1156,
+        "y": 445,
+        "target_element": "[data-log-id='proceed-checkout']",
+        "target_bbox": {
+          "x": 940,
+          "y": 412,
+          "width": 300,
+          "height": 52
+        },
+        "offset_from_center": {
+          "dx": 66,
+          "dy": 7
+        }
+      }
+    },
+    {
+      "event_id": 27,
+      "timestamp_ms": 13055,
+      "type": "navigation",
+      "data": {
+        "url": "http://localhost:8001/demo/cart.html?session_type=agent",
+        "referrer": "http://localhost:8001/demo/cart.html?session_type=agent"
+      }
+    }
+  ]
+}
