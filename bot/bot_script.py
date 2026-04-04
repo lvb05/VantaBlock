@@ -359,6 +359,15 @@ def pick_targets(n=None):
     return random.sample(PRODUCT_CHECKLIST, min(n, len(PRODUCT_CHECKLIST)))
 
 
+def next_log_index(log_dir):
+    max_idx = 0
+    for path in log_dir.glob("*.json"):
+        stem = path.stem
+        if stem.isdigit():
+            max_idx = max(max_idx, int(stem))
+    return max_idx + 1
+
+
 def navigate_listings(actor, target_product):
     print(f"[Bot] Navigating listings for: {target_product}")
     index_url = actor.goto_with_log("index.html", referrer="")
@@ -486,6 +495,8 @@ def run_bot_session(targets=None, iterations=3, push_backend=False):
     ensure_backend_available(BASE_URL)
     bot_log_dir = Path(__file__).resolve().parent.parent / "logs" / "bot_logs"
     bot_log_dir.mkdir(parents=True, exist_ok=True)
+    start_index = next_log_index(bot_log_dir)
+    print(f"[Bot] Saving iteration files from index {start_index}")
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
@@ -494,12 +505,13 @@ def run_bot_session(targets=None, iterations=3, push_backend=False):
         page.on("dialog", lambda dialog: dialog.accept())
 
         for iteration_index in range(iterations):
-            iteration_id = iteration_index + 1
+            iteration_id = start_index + iteration_index
             iteration_targets = targets or pick_targets()
             logger = SessionLogger(session_type="agent", iteration_id=iteration_id)
             actor = BotActor(page=page, logger=logger)
             print(
-                f"\n[Bot] Purchase iteration {iteration_id}/{iterations} "
+                f"\n[Bot] Purchase iteration {iteration_index + 1}/{iterations} "
+                f"(file #{iteration_id}) "
                 f"targets: {iteration_targets}"
             )
 

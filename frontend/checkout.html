@@ -230,8 +230,15 @@ function selectPayment(el) {
 }
 
 function placeOrder() {
+  // Flush logs to backend to finalize the current session
   window.flushLogs && window.flushLogs();
+  
+  // Clear the session from localStorage so a new session starts next time
+  localStorage.removeItem('unified_behaviour_session');
+  
+  // Clear the cart
   localStorage.removeItem('cart');
+  
   const orderId = '#ORD-' + Math.random().toString(36).substr(2,6).toUpperCase();
   document.getElementById('orderNum').textContent = orderId;
   document.getElementById('successScreen').style.display = 'flex';

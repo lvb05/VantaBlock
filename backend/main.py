@@ -21,10 +21,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 LOG_DIR = BASE_DIR / "logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Separate directories for human and bot logs
+HUMAN_LOG_DIR = LOG_DIR / "human_logs"
+HUMAN_LOG_DIR.mkdir(parents=True, exist_ok=True)
+BOT_LOG_DIR = LOG_DIR / "bot_logs"
+BOT_LOG_DIR.mkdir(parents=True, exist_ok=True)
+
 FRONTEND_DIR = BASE_DIR / "frontend"
 app.mount("/demo", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_-]{8,128}$")
+
+
+def next_log_index(log_dir: Path) -> int:
+    """Get the next available log index for incremental naming (1.json, 2.json, etc.)"""
+    max_idx = 0
+    for path in log_dir.glob("*.json"):
+        stem = path.stem
+        if stem.isdigit():
+            max_idx = max(max_idx, int(stem))
+    return max_idx + 1
 
 
 def normalize_session_type(raw: str) -> str:
@@ -71,7 +87,7 @@ async def receive_session_log(request: Request):
 
     validate_payload(payload)
 
-    session_type = normalize_session_type(payload.get("session_type"))
+    session_type = normalize_session_type(payload.get("session_type", "human"))
     session_id = str(payload.get("session_id", "")).strip()
 
     if not SESSION_ID_RE.match(session_id):
@@ -87,7 +103,14 @@ async def receive_session_log(request: Request):
     payload["start_time_ms"] = 0
     payload["end_time_ms"] = int(payload.get("end_time_ms", 0))
 
-    out_path = LOG_DIR / f"{session_id}.json"
+    # Save to appropriate directory with incremental naming
+    if session_type == "human":
+        log_index = next_log_index(HUMAN_LOG_DIR)
+        out_path = HUMAN_LOG_DIR / f"{log_index}.json"
+    else:
+        log_index = next_log_index(BOT_LOG_DIR)
+        out_path = BOT_LOG_DIR / f"{log_index}.json"
+    
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
