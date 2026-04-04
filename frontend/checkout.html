@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MockShop — Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0d0d0d; --surface:#161616; --border:#2a2a2a; --accent:#e8ff47; --accent2:#ff6b35; --text:#f0f0f0; --muted:#888; --card:#1a1a1a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; border-bottom:1px solid var(--border); background:rgba(13,13,13,0.92); }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--accent); text-decoration:none; }
+  .logo span { color:var(--text); }
+  .secure-badge { color:var(--muted); font-size:0.85rem; }
+
+  .checkout-layout { display:grid; grid-template-columns:1fr 380px; gap:0; min-height:80vh; }
+
+  .form-panel { padding:2.5rem 3rem; border-right:1px solid var(--border); }
+  .steps { display:flex; gap:0; margin-bottom:2.5rem; }
+  .step { flex:1; padding:0.75rem 1rem; font-size:0.75rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; border-bottom:2px solid var(--border); color:var(--muted); }
+  .step.active { border-bottom-color:var(--accent); color:var(--accent); }
+  .step.done { border-bottom-color:#555; color:#555; }
+
+  .section-title { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; margin-bottom:1.25rem; letter-spacing:-0.3px; }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+  .form-grid.full { grid-template-columns:1fr; }
+  .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+  .form-group label { font-size:0.75rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .form-group input, .form-group select {
+    background:var(--card); border:1px solid var(--border); color:var(--text);
+    padding:0.7rem 0.9rem; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:0.9rem;
+    transition:border-color 0.2s; outline:none;
+  }
+  .form-group input:focus, .form-group select:focus { border-color:var(--accent); }
+  .form-group input::placeholder { color:#555; }
+  select option { background:var(--card); }
+
+  .card-row { display:grid; grid-template-columns:2fr 1fr 1fr; gap:1rem; }
+
+  .payment-methods { display:flex; gap:0.75rem; margin-bottom:1.5rem; }
+  .pay-method { flex:1; border:1px solid var(--border); background:var(--card); border-radius:2px; padding:0.75rem; cursor:pointer; text-align:center; font-size:0.8rem; color:var(--muted); transition:all 0.2s; }
+  .pay-method:hover, .pay-method.active { border-color:var(--accent); color:var(--accent); }
+  .pay-method .icon { font-size:1.4rem; display:block; margin-bottom:0.3rem; }
+
+  .place-order-btn { width:100%; background:var(--accent); color:#000; font-family:'Syne',sans-serif; font-weight:700; border:none; padding:1.1rem; border-radius:2px; cursor:pointer; font-size:1.05rem; margin-top:2rem; transition:opacity 0.2s; }
+  .place-order-btn:hover { opacity:0.88; }
+  .back-btn { display:inline-block; color:var(--muted); text-decoration:none; font-size:0.85rem; margin-top:1rem; transition:color 0.2s; cursor:pointer; background:none; border:none; }
+  .back-btn:hover { color:var(--accent); }
+
+  .order-panel { padding:2.5rem; background:var(--card); position:sticky; top:0; align-self:start; }
+  .order-panel h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; margin-bottom:1.5rem; }
+  .order-item { display:flex; justify-content:space-between; align-items:center; padding:0.75rem 0; border-bottom:1px solid var(--border); font-size:0.88rem; }
+  .order-item-name { color:var(--text); }
+  .order-item-qty { color:var(--muted); font-size:0.8rem; }
+  .order-item-price { color:var(--accent); font-weight:600; }
+  .summary-row { display:flex; justify-content:space-between; margin-top:0.75rem; font-size:0.9rem; color:var(--muted); }
+  .summary-row.total { font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; color:var(--text); border-top:1px solid var(--border); padding-top:0.75rem; margin-top:0.75rem; }
+  .summary-row.total span:last-child { color:var(--accent); }
+
+  /* Success screen */
+  .success-screen { display:none; position:fixed; inset:0; background:var(--bg); z-index:999; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+  .success-screen .icon { font-size:5rem; margin-bottom:1.5rem; animation:pop 0.4s ease; }
+  @keyframes pop { 0%{transform:scale(0.5);opacity:0} 100%{transform:scale(1);opacity:1} }
+  .success-screen h1 { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; color:var(--accent); margin-bottom:0.75rem; }
+  .success-screen p { color:var(--muted); margin-bottom:0.5rem; }
+  .success-screen .order-num { font-family:'Syne',sans-serif; font-size:1.1rem; color:var(--text); margin:1rem 0; }
+  .success-screen a { color:var(--accent); text-decoration:none; font-weight:600; margin-top:1.5rem; display:inline-block; }
+  footer { padding:2rem 3rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.8rem; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<script>window.SESSION_TYPE='human'; window.PAGE_NAME='checkout';</script>
+
+<header>
+  <a href="index.html" class="logo" data-log-id="logo">Mock<span>Shop</span></a>
+  <span class="secure-badge">🔒 256-bit SSL Encrypted</span>
+</header>
+
+<div class="checkout-layout">
+  <div class="form-panel">
+    <div class="steps">
+      <div class="step active" id="step1">1. Shipping</div>
+      <div class="step" id="step2">2. Payment</div>
+      <div class="step" id="step3">3. Review</div>
+    </div>
+
+    <!-- Step 1: Shipping -->
+    <div id="shippingSection">
+      <div class="section-title">Shipping Address</div>
+      <div class="form-grid">
+        <div class="form-group"><label>First Name</label><input type="text" id="firstName" data-log-id="input-firstname" placeholder="John"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lastName" data-log-id="input-lastname" placeholder="Doe"></div>
+      </div>
+      <div class="form-grid full">
+        <div class="form-group"><label>Email</label><input type="email" id="email" data-log-id="input-email" placeholder="john@example.com"></div>
+      </div>
+      <div class="form-grid full">
+        <div class="form-group"><label>Address</label><input type="text" id="address" data-log-id="input-address" placeholder="123 Main Street"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group"><label>City</label><input type="text" id="city" data-log-id="input-city" placeholder="New York"></div>
+        <div class="form-group"><label>ZIP / Postal Code</label><input type="text" id="zip" data-log-id="input-zip" placeholder="10001"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group"><label>State</label><input type="text" id="state" data-log-id="input-state" placeholder="NY"></div>
+        <div class="form-group"><label>Country</label>
+          <select id="country" data-log-id="select-country">
+            <option>United States</option><option>United Kingdom</option><option>Canada</option>
+            <option>Australia</option><option>India</option><option>Germany</option><option>France</option>
+          </select>
+        </div>
+      </div>
+      <button class="place-order-btn" data-log-id="continue-to-payment" onclick="goToPayment()">Continue to Payment →</button>
+      <a href="cart.html" class="back-btn" data-log-id="back-to-cart">← Back to Cart</a>
+    </div>
+
+    <!-- Step 2: Payment -->
+    <div id="paymentSection" style="display:none;">
+      <div class="section-title">Payment Method</div>
+      <div class="payment-methods">
+        <div class="pay-method active" data-log-id="pay-card" onclick="selectPayment(this)"><span class="icon">💳</span>Credit Card</div>
+        <div class="pay-method" data-log-id="pay-paypal" onclick="selectPayment(this)"><span class="icon">🅿️</span>PayPal</div>
+        <div class="pay-method" data-log-id="pay-crypto" onclick="selectPayment(this)"><span class="icon">₿</span>Crypto</div>
+      </div>
+      <div class="section-title" style="margin-top:1.5rem;">Card Details</div>
+      <div class="form-grid full">
+        <div class="form-group"><label>Cardholder Name</label><input type="text" id="cardName" data-log-id="input-cardname" placeholder="John Doe"></div>
+      </div>
+      <div class="form-grid full">
+        <div class="form-group"><label>Card Number</label><input type="text" id="cardNum" data-log-id="input-cardnum" placeholder="•••• •••• •••• ••••" maxlength="19"></div>
+      </div>
+      <div class="card-row">
+        <div class="form-group"><label>Expiry Month</label><input type="text" id="expM" data-log-id="input-expm" placeholder="MM" maxlength="2"></div>
+        <div class="form-group"><label>Expiry Year</label><input type="text" id="expY" data-log-id="input-expy" placeholder="YY" maxlength="2"></div>
+        <div class="form-group"><label>CVV</label><input type="text" id="cvv" data-log-id="input-cvv" placeholder="•••" maxlength="3"></div>
+      </div>
+      <button class="place-order-btn" data-log-id="review-order" onclick="goToReview()">Review Order →</button>
+      <button class="back-btn" data-log-id="back-to-shipping" onclick="goBack('shipping')">← Back to Shipping</button>
+    </div>
+
+    <!-- Step 3: Review -->
+    <div id="reviewSection" style="display:none;">
+      <div class="section-title">Review & Place Order</div>
+      <div id="reviewSummary" style="background:var(--card);border:1px solid var(--border);border-radius:2px;padding:1.25rem;margin-bottom:1.5rem;font-size:0.88rem;line-height:2;color:var(--muted);"></div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem;">By placing your order you agree to MockShop's Terms of Service. This is a research simulation — no real transaction will occur.</p>
+      <button class="place-order-btn" data-log-id="place-order" onclick="placeOrder()">✓ Place Order</button>
+      <button class="back-btn" data-log-id="back-to-payment" onclick="goBack('payment')">← Back to Payment</button>
+    </div>
+  </div>
+
+  <!-- Order Summary -->
+  <div class="order-panel">
+    <h3>Order Summary</h3>
+    <div id="orderItems"></div>
+    <div class="summary-row"><span>Subtotal</span><span id="oSubtotal">$0.00</span></div>
+    <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+    <div class="summary-row"><span>Tax (8%)</span><span id="oTax">$0.00</span></div>
+    <div class="summary-row total"><span>Total</span><span id="oTotal">$0.00</span></div>
+  </div>
+</div>
+
+<div class="success-screen" id="successScreen">
+  <div class="icon">✅</div>
+  <h1>Order Placed!</h1>
+  <p>Thank you for your research participation.</p>
+  <div class="order-num" id="orderNum">#ORD-000000</div>
+  <p style="font-size:0.85rem;">This is a simulated order. No real transaction occurred.</p>
+  <a href="index.html" data-log-id="back-home">← Back to Store</a>
+</div>
+
+<footer>
+  <span>MockShop Research Store</span>
+  <span>All products and transactions are fictional</span>
+</footer>
+
+<script src="logger.js"></script>
+<script>
+const EMOJIS = { p001:'🎧',p002:'📱',p003:'💻',p004:'⌚',p005:'🔊',p006:'📲',p007:'📟',p008:'🎵',p009:'🕐',p010:'🔌',p011:'🎙️',p012:'🔋' };
+
+function renderOrderSummary() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  document.getElementById('orderItems').innerHTML = cart.map(i => `
+    <div class="order-item">
+      <div><div class="order-item-name">${EMOJIS[i.id]||'📦'} ${i.name}</div><div class="order-item-qty">Qty: ${i.qty}</div></div>
+      <div class="order-item-price">$${(i.price*i.qty).toFixed(2)}</div>
+    </div>`).join('');
+  const sub = cart.reduce((s,i) => s+i.price*i.qty, 0);
+  const tax = sub*0.08;
+  document.getElementById('oSubtotal').textContent = `$${sub.toFixed(2)}`;
+  document.getElementById('oTax').textContent = `$${tax.toFixed(2)}`;
+  document.getElementById('oTotal').textContent = `$${(sub+tax).toFixed(2)}`;
+}
+
+function setStep(active) {
+  ['step1','step2','step3'].forEach((s,i) => {
+    const el = document.getElementById(s);
+    const idx = i+1;
+    el.className = 'step' + (idx === active ? ' active' : idx < active ? ' done' : '');
+  });
+}
+
+function goToPayment() {
+  setStep(2);
+  document.getElementById('shippingSection').style.display = 'none';
+  document.getElementById('paymentSection').style.display = 'block';
+}
+
+function goToReview() {
+  setStep(3);
+  document.getElementById('paymentSection').style.display = 'none';
+  document.getElementById('reviewSection').style.display = 'block';
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const sub = cart.reduce((s,i) => s+i.price*i.qty, 0);
+  document.getElementById('reviewSummary').innerHTML =
+    `<strong style="color:var(--text)">Ship to:</strong> ${document.getElementById('firstName').value||'—'} ${document.getElementById('lastName').value||'—'}, ${document.getElementById('city').value||'—'}<br>` +
+    `<strong style="color:var(--text)">Card:</strong> •••• •••• •••• ${(document.getElementById('cardNum').value||'0000').slice(-4)}<br>` +
+    `<strong style="color:var(--text)">Items:</strong> ${cart.reduce((s,i)=>s+i.qty,0)} item(s)<br>` +
+    `<strong style="color:var(--text)">Total:</strong> <span style="color:var(--accent)">$${(sub*1.08).toFixed(2)}</span>`;
+}
+
+function goBack(to) {
+  if (to === 'shipping') { setStep(1); document.getElementById('paymentSection').style.display='none'; document.getElementById('shippingSection').style.display='block'; }
+  if (to === 'payment')  { setStep(2); document.getElementById('reviewSection').style.display='none'; document.getElementById('paymentSection').style.display='block'; }
+}
+
+function selectPayment(el) {
+  document.querySelectorAll('.pay-method').forEach(m => m.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function placeOrder() {
+  window.flushLogs && window.flushLogs();
+  localStorage.removeItem('cart');
+  const orderId = '#ORD-' + Math.random().toString(36).substr(2,6).toUpperCase();
+  document.getElementById('orderNum').textContent = orderId;
+  document.getElementById('successScreen').style.display = 'flex';
+}
+
+renderOrderSummary();
+</script>
+</body>
+</html>

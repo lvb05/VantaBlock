@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MockShop — Product</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0d0d0d; --surface:#161616; --border:#2a2a2a; --accent:#e8ff47; --accent2:#ff6b35; --text:#f0f0f0; --muted:#888; --card:#1a1a1a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:rgba(13,13,13,0.92); backdrop-filter:blur(12px); z-index:100; }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--accent); }
+  .logo span { color:var(--text); }
+  .cart-btn { background:var(--accent); color:#000; font-family:'Syne',sans-serif; font-weight:700; border:none; padding:0.55rem 1.25rem; border-radius:2px; cursor:pointer; font-size:0.85rem; text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .cart-count { background:#000; color:var(--accent); border-radius:50%; width:18px; height:18px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; }
+  .breadcrumb { padding:1rem 3rem; font-size:0.8rem; color:var(--muted); border-bottom:1px solid var(--border); }
+  .breadcrumb a { color:var(--muted); text-decoration:none; }
+  .breadcrumb a:hover { color:var(--accent); }
+
+  .product-layout { display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:70vh; }
+  .product-image-panel { background:var(--card); border-right:1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3rem; gap:1rem; }
+  .main-image { width:100%; max-width:320px; height:320px; background:#222; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:6rem; }
+  .thumb-row { display:flex; gap:0.75rem; }
+  .thumb { width:64px; height:64px; background:#222; border-radius:2px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; border:1px solid var(--border); cursor:pointer; transition:border-color 0.2s; }
+  .thumb:hover, .thumb.active { border-color:var(--accent); }
+
+  .product-info-panel { padding:3rem; display:flex; flex-direction:column; gap:1.25rem; }
+  .prod-brand { font-size:0.7rem; color:var(--accent); letter-spacing:3px; text-transform:uppercase; }
+  .prod-name { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; line-height:1.1; letter-spacing:-1px; }
+  .prod-rating { color:var(--muted); font-size:0.85rem; }
+  .prod-rating strong { color:var(--accent); }
+  .prod-price { font-size:2.2rem; font-family:'Syne',sans-serif; font-weight:700; color:var(--accent); }
+  .prod-price s { color:var(--muted); font-size:1.2rem; margin-right:0.5rem; }
+  .divider { border:none; border-top:1px solid var(--border); }
+  .prod-desc { color:#bbb; line-height:1.7; font-size:0.95rem; }
+
+  .specs { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; }
+  .spec { background:var(--card); padding:0.75rem 1rem; border-radius:2px; border:1px solid var(--border); }
+  .spec-label { font-size:0.7rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .spec-value { font-size:0.9rem; font-weight:500; margin-top:0.2rem; }
+
+  .qty-row { display:flex; align-items:center; gap:1rem; }
+  .qty-btn { width:36px; height:36px; background:var(--card); border:1px solid var(--border); color:var(--text); font-size:1.1rem; cursor:pointer; border-radius:2px; transition:border-color 0.2s; }
+  .qty-btn:hover { border-color:var(--accent); }
+  .qty-display { font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; min-width:2rem; text-align:center; }
+
+  .action-row { display:flex; gap:1rem; }
+  .btn-primary { flex:1; background:var(--accent); color:#000; font-family:'Syne',sans-serif; font-weight:700; border:none; padding:1rem; border-radius:2px; cursor:pointer; font-size:1rem; transition:opacity 0.2s; }
+  .btn-primary:hover { opacity:0.88; }
+  .btn-secondary { background:transparent; color:var(--text); font-family:'Syne',sans-serif; font-weight:700; border:1px solid var(--border); padding:1rem 1.5rem; border-radius:2px; cursor:pointer; font-size:1rem; transition:border-color 0.2s; }
+  .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+
+  .toast { position:fixed; bottom:2rem; right:2rem; background:var(--accent); color:#000; padding:0.75rem 1.5rem; border-radius:2px; font-family:'Syne',sans-serif; font-weight:700; font-size:0.85rem; transform:translateY(100px); opacity:0; transition:all 0.3s; z-index:999; }
+  .toast.show { transform:translateY(0); opacity:1; }
+
+  .reviews-section { padding:3rem; border-top:1px solid var(--border); }
+  .reviews-section h2 { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:800; margin-bottom:1.5rem; }
+  .review { padding:1.25rem; background:var(--card); border-radius:2px; border:1px solid var(--border); margin-bottom:1rem; }
+  .review-header { display:flex; justify-content:space-between; margin-bottom:0.5rem; }
+  .review-author { font-weight:500; font-size:0.9rem; }
+  .review-stars { color:var(--accent); font-size:0.85rem; }
+  .review-text { color:#bbb; font-size:0.88rem; line-height:1.6; }
+  footer { padding:2rem 3rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.8rem; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<script>window.SESSION_TYPE='human'; window.PAGE_NAME='product';</script>
+
+<header>
+  <a href="index.html" class="logo" data-log-id="logo">Mock<span>Shop</span></a>
+  <a href="cart.html" class="cart-btn" data-log-id="nav-cart">
+    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+  </a>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html" data-log-id="breadcrumb-home">Home</a> /
+  <a href="index.html" data-log-id="breadcrumb-listings">Electronics</a> /
+  <span id="breadcrumbName">Product</span>
+</div>
+
+<div class="product-layout">
+  <div class="product-image-panel">
+    <div class="main-image" id="mainImage">📦</div>
+    <div class="thumb-row" id="thumbRow"></div>
+  </div>
+  <div class="product-info-panel">
+    <div class="prod-brand" id="prodBrand">BRAND</div>
+    <div class="prod-name" id="prodName">Product Name</div>
+    <div class="prod-rating" id="prodRating"><strong>4.5 ★</strong> · 1,200 reviews</div>
+    <div class="prod-price" id="prodPrice">$0</div>
+    <hr class="divider">
+    <div class="prod-desc" id="prodDesc">Loading...</div>
+    <div class="specs" id="prodSpecs"></div>
+    <hr class="divider">
+    <div class="qty-row">
+      <span style="font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Qty</span>
+      <button class="qty-btn" data-log-id="qty-minus" onclick="changeQty(-1)">−</button>
+      <div class="qty-display" id="qtyDisplay">1</div>
+      <button class="qty-btn" data-log-id="qty-plus" onclick="changeQty(1)">+</button>
+    </div>
+    <div class="action-row">
+      <button class="btn-primary" id="addToCartBtn" data-log-id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+      <button class="btn-secondary" data-log-id="buy-now" onclick="buyNow()">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="reviews-section">
+  <h2>Customer Reviews</h2>
+  <div id="reviewsContainer"></div>
+</div>
+
+<footer>
+  <span>MockShop Research Store</span>
+  <span>All products are fictional</span>
+</footer>
+
+<div class="toast" id="toast">✓ Added to cart</div>
+
+<script src="logger.js"></script>
+<script>
+const PRODUCTS = {
+  p001:{ name:'SoundPeak Pro X', brand:'Audient', price:249, original:299, emoji:'🎧', rating:'4.8', reviews:2100, desc:'Premium over-ear headphones with 40-hour battery life and adaptive noise cancellation. Built with aerospace-grade aluminium and memory foam cushions.', specs:[['Driver','40mm Dynamic'],['Battery','40 hrs'],['Connectivity','Bluetooth 5.3'],['Weight','285g']] },
+  p002:{ name:'UltraPhone 15', brand:'Nexus', price:899, original:null, emoji:'📱', rating:'4.6', reviews:890, desc:'Flagship smartphone with a 6.7" AMOLED display, 200MP camera system, and 5G connectivity. Powered by the latest Hexa-core processor.', specs:[['Display','6.7" AMOLED'],['Camera','200MP'],['Battery','5000mAh'],['Storage','256GB']] },
+  p003:{ name:'SlimBook Air', brand:'Volta', price:1199, original:1399, emoji:'💻', rating:'4.7', reviews:540, desc:'Ultra-thin laptop at just 12mm thick weighing 1.1kg. Features a 13.6" Retina display and 18-hour battery life.', specs:[['Display','13.6" Retina'],['Processor','Octa-core'],['RAM','16GB'],['Battery','18 hrs']] },
+  p004:{ name:'FitBand Pro', brand:'HealthTech', price:149, original:null, emoji:'⌚', rating:'4.4', reviews:3200, desc:'Advanced fitness tracker with continuous heart rate, SpO2 monitoring, and GPS. 14-day battery life and IP68 waterproofing.', specs:[['Battery','14 days'],['Water','IP68'],['GPS','Built-in'],['Sensors','HR + SpO2']] },
+  p005:{ name:'BassCore 300', brand:'Audient', price:89, original:null, emoji:'🔊', rating:'4.3', reviews:1400, desc:'Portable Bluetooth speaker with 360° sound and deep bass radiator. IPX7 waterproof and 20-hour playtime.', specs:[['Output','30W'],['Battery','20 hrs'],['Water','IPX7'],['Connectivity','BT 5.0']] },
+  p006:{ name:'MiniPhone Go', brand:'Nexus', price:399, original:449, emoji:'📲', rating:'4.2', reviews:670, desc:'Compact 5G smartphone with a 6.1" display and 64MP camera. Perfect everyday carry at an accessible price.', specs:[['Display','6.1" LCD'],['Camera','64MP'],['Battery','4200mAh'],['Storage','128GB']] },
+  p007:{ name:'ProPad Ultra', brand:'Volta', price:599, original:null, emoji:'📟', rating:'4.9', reviews:210, desc:'Professional tablet with a 12.9" ProMotion display and stylus support. Ideal for creators and power users.', specs:[['Display','12.9" 120Hz'],['Processor','Deca-core'],['RAM','12GB'],['Storage','256GB']] },
+  p008:{ name:'AirBuds 3', brand:'Audient', price:79, original:99, emoji:'🎵', rating:'4.5', reviews:5600, desc:'True wireless earbuds with 6mm drivers, 28-hour total battery life, and one-tap noise cancellation.', specs:[['Driver','6mm'],['Battery','28 hrs'],['ANC','One-tap'],['Fit','In-ear']] },
+  p009:{ name:'SmartWatch X2', brand:'HealthTech', price:299, original:null, emoji:'🕐', rating:'4.7', reviews:980, desc:'Premium smartwatch with always-on AMOLED display, ECG monitoring, and built-in LTE. 7-day battery life.', specs:[['Display','AMOLED AOD'],['Battery','7 days'],['LTE','Built-in'],['ECG','Yes']] },
+  p010:{ name:'USB-C Hub Pro', brand:'ConnectX', price:49, original:null, emoji:'🔌', rating:'4.6', reviews:7800, desc:'7-in-1 USB-C hub with 4K HDMI, 100W PD, SD card reader, and 3x USB-A ports. Plug and play.', specs:[['Ports','7-in-1'],['HDMI','4K@60Hz'],['PD','100W'],['SD','UHS-II']] },
+  p011:{ name:'NoiseCanceller Elite', brand:'Audient', price:349, original:399, emoji:'🎙️', rating:'4.8', reviews:1100, desc:'Studio-grade ANC headphones with dual-chip architecture. Transparent mode, 35-hour battery, and premium leather cushions.', specs:[['ANC','Dual-chip'],['Battery','35 hrs'],['Driver','45mm'],['Foldable','Yes']] },
+  p012:{ name:'MagCharge Pad', brand:'ConnectX', price:39, original:null, emoji:'🔋', rating:'4.3', reviews:4200, desc:'15W magnetic wireless charger compatible with all Qi devices. Slim 5mm profile with LED indicator.', specs:[['Output','15W'],['Standard','Qi + Mag'],['Profile','5mm'],['Indicator','LED']] },
+};
+
+const REVIEWS = [
+  { author:'Alex M.', stars:'★★★★★', text:'Absolutely love it. Exceeded my expectations in every way.' },
+  { author:'Priya K.', stars:'★★★★☆', text:'Great build quality and performance. Delivery was fast too.' },
+  { author:'James T.', stars:'★★★★★', text:'Best purchase I\'ve made this year. Highly recommended!' },
+  { author:'Sara L.', stars:'★★★☆☆', text:'Decent for the price, but the packaging could be better.' },
+];
+
+let qty = 1;
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id') || 'p001';
+const product = PRODUCTS[productId] || PRODUCTS['p001'];
+
+document.getElementById('breadcrumbName').textContent = product.name;
+document.getElementById('mainImage').textContent = product.emoji;
+document.getElementById('prodBrand').textContent = product.brand;
+document.getElementById('prodName').textContent = product.name;
+document.getElementById('prodRating').innerHTML = `<strong>${product.rating} ★</strong> · ${product.reviews.toLocaleString()} reviews`;
+document.getElementById('prodPrice').innerHTML = product.original ? `<s>$${product.original}</s>$${product.price}` : `$${product.price}`;
+document.getElementById('prodDesc').textContent = product.desc;
+document.getElementById('prodSpecs').innerHTML = product.specs.map(([l,v]) => `<div class="spec"><div class="spec-label">${l}</div><div class="spec-value">${v}</div></div>`).join('');
+document.getElementById('reviewsContainer').innerHTML = REVIEWS.map(r => `<div class="review"><div class="review-header"><span class="review-author">${r.author}</span><span class="review-stars">${r.stars}</span></div><div class="review-text">${r.text}</div></div>`).join('');
+
+// Thumbnails
+const thumbEmojis = [product.emoji, '📦', '🔍', '📸'];
+document.getElementById('thumbRow').innerHTML = thumbEmojis.map((e,i) => `<div class="thumb ${i===0?'active':''}" data-log-id="thumb-${i}" onclick="selectThumb(this,'${e}')">${e}</div>`).join('');
+
+function selectThumb(el, emoji) {
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('mainImage').textContent = emoji;
+}
+
+function changeQty(delta) {
+  qty = Math.max(1, qty + delta);
+  document.getElementById('qtyDisplay').textContent = qty;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+function addToCart() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const existing = cart.find(i => i.id === productId);
+  if (existing) existing.qty += qty;
+  else cart.push({ id: productId, name: product.name, price: product.price, qty });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  showToast(`✓ ${product.name} added to cart`);
+}
+
+function buyNow() {
+  addToCart();
+  window.flushLogs && window.flushLogs();
+  window.location.href = 'cart.html';
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  document.getElementById('cartCount').textContent = cart.reduce((s,i) => s+i.qty, 0);
+}
+updateCartCount();
+</script>
+</body>
+</html>

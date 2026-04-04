@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MockShop — Electronics | 55+ Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d; --surface: #161616; --border: #2a2a2a;
+    --accent: #e8ff47; --accent2: #ff6b35;
+    --text: #f0f0f0; --muted: #888;
+    --card: #1a1a1a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; }
+
+  header {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.25rem 3rem; border-bottom:1px solid var(--border);
+    position:sticky; top:0; background:rgba(13,13,13,0.92); backdrop-filter:blur(12px); z-index:100;
+  }
+  .logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--accent); letter-spacing:-0.5px; }
+  .logo span { color:var(--text); }
+  nav a { color:var(--muted); text-decoration:none; margin-left:2rem; font-size:0.9rem; transition:color 0.2s; }
+  nav a:hover { color:var(--text); }
+  .cart-btn {
+    background:var(--accent); color:#000; font-family:'Syne',sans-serif; font-weight:700;
+    border:none; padding:0.55rem 1.25rem; border-radius:2px; cursor:pointer; font-size:0.85rem;
+    text-decoration:none; display:flex; align-items:center; gap:0.5rem;
+  }
+  .cart-count { background:#000; color:var(--accent); border-radius:50%; width:18px; height:18px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; }
+
+  .hero { padding:4rem 3rem 2rem; border-bottom:1px solid var(--border); }
+  .hero-tag { font-size:0.75rem; color:var(--accent); letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem; }
+  .hero h1 { font-family:'Syne',sans-serif; font-size:clamp(2.5rem,5vw,4.5rem); font-weight:800; line-height:1; letter-spacing:-2px; }
+  .hero h1 em { color:var(--accent); font-style:normal; }
+  .filter-bar { display:flex; gap:0.75rem; padding:1.5rem 3rem; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .filter-btn {
+    border:1px solid var(--border); background:transparent; color:var(--muted);
+    padding:0.4rem 1rem; border-radius:2px; cursor:pointer; font-size:0.8rem; font-family:'DM Sans',sans-serif;
+    transition:all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active { border-color:var(--accent); color:var(--accent); }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1px; padding:0; background:var(--border); }
+  .product-card {
+    background:var(--card); padding:1.75rem; cursor:pointer;
+    transition:background 0.2s; position:relative; overflow:hidden;
+    text-decoration:none; color:inherit; display:block;
+  }
+  .product-card:hover { background:#222; }
+  .product-card:hover .card-cta { opacity:1; transform:translateY(0); }
+  .badge {
+    position:absolute; top:1rem; right:1rem;
+    font-size:0.65rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    padding:0.2rem 0.5rem; border-radius:1px;
+  }
+  .badge-new { background:var(--accent); color:#000; }
+  .badge-sale { background:var(--accent2); color:#fff; }
+  .img-placeholder {
+    width:100%; height:180px; background:#222; border-radius:2px; margin-bottom:1.25rem;
+    display:flex; align-items:center; justify-content:center; font-size:2.5rem;
+  }
+  .card-brand { font-size:0.7rem; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:0.3rem; }
+  .card-name { font-family:'Syne',sans-serif; font-weight:700; font-size:1.05rem; margin-bottom:0.5rem; }
+  .card-price { font-size:1.1rem; font-weight:500; color:var(--accent); }
+  .card-price s { color:var(--muted); font-size:0.85rem; margin-right:0.4rem; }
+  .card-rating { color:var(--muted); font-size:0.8rem; margin-top:0.4rem; }
+  .card-cta {
+    margin-top:1rem; background:var(--accent); color:#000; border:none;
+    width:100%; padding:0.65rem; font-family:'Syne',sans-serif; font-weight:700; font-size:0.85rem;
+    cursor:pointer; border-radius:1px; opacity:0; transform:translateY(6px); transition:all 0.2s;
+  }
+
+  footer { padding:2rem 3rem; border-top:1px solid var(--border); color:var(--muted); font-size:0.8rem; display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<script>window.SESSION_TYPE='human'; window.PAGE_NAME='listings';</script>
+
+<header>
+  <div class="logo">Mock<span>Shop</span></div>
+  <nav>
+    <a href="index.html" data-log-id="nav-listings">All Products</a>
+    <a href="#" data-log-id="nav-deals">Deals</a>
+    <a href="#" data-log-id="nav-new">New Arrivals</a>
+  </nav>
+  <a href="cart.html" class="cart-btn" data-log-id="nav-cart">
+    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-tag">Phase 2 Research Store</div>
+  <h1>Tech &amp; <em>Electronics</em><br>55+ Premium Listings</h1>
+</section>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-log-id="filter-all" onclick="filterProducts('all',this)">All</button>
+  <button class="filter-btn" data-log-id="filter-audio" onclick="filterProducts('audio',this)">Audio</button>
+  <button class="filter-btn" data-log-id="filter-phones" onclick="filterProducts('phones',this)">Phones</button>
+  <button class="filter-btn" data-log-id="filter-laptops" onclick="filterProducts('laptops',this)">Laptops</button>
+  <button class="filter-btn" data-log-id="filter-wearables" onclick="filterProducts('wearables',this)">Wearables</button>
+  <button class="filter-btn" data-log-id="filter-accessories" onclick="filterProducts('accessories',this)">Accessories</button>
+</div>
+
+<div class="grid" id="productGrid"></div>
+
+<footer>
+  <span>MockShop Research Store — Phase 2 Data Collection</span>
+  <span>All products and data are fictional</span>
+</footer>
+
+<script src="logger.js"></script>
+<script>
+// =============================== 55 PRODUCTS (original 12 + 43 new) ===============================
+const PRODUCTS = [
+  // ----- ORIGINAL 12 PRODUCTS (preserved exactly) -----
+  { id:'p001', name:'SoundPeak Pro X', brand:'Audient', price:249, original:299, emoji:'🎧', category:'audio', badge:'sale', rating:'4.8 ★ (2.1k)' },
+  { id:'p002', name:'UltraPhone 15', brand:'Nexus', price:899, original:null, emoji:'📱', category:'phones', badge:'new', rating:'4.6 ★ (890)' },
+  { id:'p003', name:'SlimBook Air', brand:'Volta', price:1199, original:1399, emoji:'💻', category:'laptops', badge:'sale', rating:'4.7 ★ (540)' },
+  { id:'p004', name:'FitBand Pro', brand:'HealthTech', price:149, original:null, emoji:'⌚', category:'wearables', badge:null, rating:'4.4 ★ (3.2k)' },
+  { id:'p005', name:'BassCore 300', brand:'Audient', price:89, original:null, emoji:'🔊', category:'audio', badge:null, rating:'4.3 ★ (1.4k)' },
+  { id:'p006', name:'MiniPhone Go', brand:'Nexus', price:399, original:449, emoji:'📲', category:'phones', badge:'sale', rating:'4.2 ★ (670)' },
+  { id:'p007', name:'ProPad Ultra', brand:'Volta', price:599, original:null, emoji:'📟', category:'laptops', badge:'new', rating:'4.9 ★ (210)' },
+  { id:'p008', name:'AirBuds 3', brand:'Audient', price:79, original:99, emoji:'🎵', category:'audio', badge:'sale', rating:'4.5 ★ (5.6k)' },
+  { id:'p009', name:'SmartWatch X2', brand:'HealthTech', price:299, original:null, emoji:'🕐', category:'wearables', badge:'new', rating:'4.7 ★ (980)' },
+  { id:'p010', name:'USB-C Hub Pro', brand:'ConnectX', price:49, original:null, emoji:'🔌', category:'accessories', badge:null, rating:'4.6 ★ (7.8k)' },
+  { id:'p011', name:'NoiseCanceller Elite', brand:'Audient', price:349, original:399, emoji:'🎙️', category:'audio', badge:null, rating:'4.8 ★ (1.1k)' },
+  { id:'p012', name:'MagCharge Pad', brand:'ConnectX', price:39, original:null, emoji:'🔋', category:'accessories', badge:null, rating:'4.3 ★ (4.2k)' },
+
+  // ----------------------------- 43 NEW PRODUCTS (p013 to p055) -----------------------------
+  // AUDIO (8 new)
+  { id:'p013', name:'OrbitSound Stage', brand:'Audient', price:189, original:229, emoji:'🔈', category:'audio', badge:'sale', rating:'4.6 ★ (890)' },
+  { id:'p014', name:'VoxPods Pro', brand:'Nebula Audio', price:159, original:null, emoji:'🎧', category:'audio', badge:'new', rating:'4.9 ★ (1.2k)' },
+  { id:'p015', name:'BassReactor Xtreme', brand:'Audient', price:129, original:169, emoji:'🔊', category:'audio', badge:'sale', rating:'4.5 ★ (2.3k)' },
+  { id:'p016', name:'StudioMonitor One', brand:'Apex Sound', price:399, original:null, emoji:'🎚️', category:'audio', badge:null, rating:'4.7 ★ (650)' },
+  { id:'p017', name:'TravelTune Mini', brand:'Audient', price:49, original:69, emoji:'🎵', category:'audio', badge:'sale', rating:'4.3 ★ (3.1k)' },
+  { id:'p018', name:'SurroundWave 7.1', brand:'Orion', price:279, original:329, emoji:'📢', category:'audio', badge:'sale', rating:'4.8 ★ (420)' },
+  { id:'p019', name:'AuraClip Buds', brand:'Nebula Audio', price:99, original:null, emoji:'🎧', category:'audio', badge:'new', rating:'4.4 ★ (1.7k)' },
+  { id:'p020', name:'StageMaster Amp', brand:'CircuitLab', price:449, original:499, emoji:'🎛️', category:'audio', badge:null, rating:'4.9 ★ (310)' },
+  
+  // PHONES (8 new)
+  { id:'p021', name:'Apex Fold X', brand:'Nexus', price:1599, original:1899, emoji:'📱', category:'phones', badge:'sale', rating:'4.8 ★ (1.5k)' },
+  { id:'p022', name:'Nova Lite 5G', brand:'EdgeTech', price:349, original:399, emoji:'📲', category:'phones', badge:'sale', rating:'4.5 ★ (2.1k)' },
+  { id:'p023', name:'Photon Pro Max', brand:'Nexus', price:1099, original:null, emoji:'📱', category:'phones', badge:'new', rating:'4.7 ★ (980)' },
+  { id:'p024', name:'Clamshell Retro', brand:'RetroTech', price:499, original:null, emoji:'📞', category:'phones', badge:null, rating:'4.2 ★ (430)' },
+  { id:'p025', name:'Ion GamerPhone', brand:'Nexus', price:1299, original:1499, emoji:'📱', category:'phones', badge:'sale', rating:'4.9 ★ (760)' },
+  { id:'p026', name:'Breeze SE', brand:'Lumina', price:199, original:null, emoji:'📱', category:'phones', badge:null, rating:'4.3 ★ (2.9k)' },
+  { id:'p027', name:'Titan X Rugged', brand:'Atlas', price:699, original:799, emoji:'📱', category:'phones', badge:'sale', rating:'4.6 ★ (520)' },
+  { id:'p028', name:'Spark Mini', brand:'Nexus', price:279, original:null, emoji:'📲', category:'phones', badge:'new', rating:'4.5 ★ (1.8k)' },
+  
+  // LAPTOPS (6 new)
+  { id:'p029', name:'Spectre Flex', brand:'Volta', price:1399, original:1599, emoji:'💻', category:'laptops', badge:'sale', rating:'4.8 ★ (670)' },
+  { id:'p030', name:'WorkMate Celeron', brand:'Apex', price:499, original:null, emoji:'🖥️', category:'laptops', badge:null, rating:'4.2 ★ (2.3k)' },
+  { id:'p031', name:'Nexus Book 5G', brand:'Nexus', price:1799, original:1999, emoji:'💻', category:'laptops', badge:'sale', rating:'4.9 ★ (420)' },
+  { id:'p032', name:'Alpha Chromebook', brand:'EdgeTech', price:379, original:null, emoji:'📓', category:'laptops', badge:'new', rating:'4.4 ★ (1.1k)' },
+  { id:'p033', name:'ZenBook Duo', brand:'Volta', price:1599, original:null, emoji:'💻', category:'laptops', badge:null, rating:'4.7 ★ (550)' },
+  { id:'p034', name:'Apex Predator Pro', brand:'Apex', price:2499, original:2899, emoji:'🎮', category:'laptops', badge:'sale', rating:'4.9 ★ (880)' },
+  
+  // WEARABLES (8 new)
+  { id:'p035', name:'HealthRing V3', brand:'HealthTech', price:199, original:249, emoji:'💍', category:'wearables', badge:'sale', rating:'4.6 ★ (2.1k)' },
+  { id:'p036', name:'VitaBand Active', brand:'VitaCore', price:89, original:null, emoji:'⌚', category:'wearables', badge:null, rating:'4.3 ★ (4.5k)' },
+  { id:'p037', name:'AuraVision Glass', brand:'Orion', price:399, original:499, emoji:'🥽', category:'wearables', badge:'sale', rating:'4.5 ★ (320)' },
+  { id:'p038', name:'Pulse Elite HR', brand:'HealthTech', price:159, original:189, emoji:'⌚', category:'wearables', badge:'sale', rating:'4.7 ★ (2.8k)' },
+  { id:'p039', name:'KidFit Tracker', brand:'SafeKids', price:79, original:null, emoji:'⌚', category:'wearables', badge:'new', rating:'4.4 ★ (1.6k)' },
+  { id:'p040', name:'MotionSense Band', brand:'HealthTech', price:129, original:null, emoji:'⌚', category:'wearables', badge:null, rating:'4.5 ★ (3.0k)' },
+  { id:'p041', name:'SolarCharge Watch', brand:'EcoWear', price:249, original:299, emoji:'⌚', category:'wearables', badge:'sale', rating:'4.8 ★ (410)' },
+  { id:'p042', name:'Link Pods AR', brand:'Nebula', price:549, original:null, emoji:'👓', category:'wearables', badge:'new', rating:'4.9 ★ (290)' },
+  
+  // ACCESSORIES (13 new)
+  { id:'p043', name:'ErgoLift Stand', brand:'ConnectX', price:59, original:null, emoji:'📐', category:'accessories', badge:null, rating:'4.7 ★ (6.2k)' },
+  { id:'p044', name:'SwiftCharge 65W', brand:'PowerCore', price:45, original:69, emoji:'⚡', category:'accessories', badge:'sale', rating:'4.8 ★ (3.8k)' },
+  { id:'p045', name:'DeskMat RGB', brand:'GearLab', price:39, original:null, emoji:'🖱️', category:'accessories', badge:null, rating:'4.4 ★ (1.9k)' },
+  { id:'p046', name:'Magnetic Cable Kit', brand:'ConnectX', price:29, original:null, emoji:'🔌', category:'accessories', badge:'new', rating:'4.5 ★ (4.2k)' },
+  { id:'p047', name:'Privacy Screen Elite', brand:'SafeView', price:34, original:49, emoji:'🛡️', category:'accessories', badge:'sale', rating:'4.3 ★ (1.3k)' },
+  { id:'p048', name:'Mini Docking Hub', brand:'ConnectX', price:89, original:119, emoji:'🔌', category:'accessories', badge:'sale', rating:'4.7 ★ (2.5k)' },
+  { id:'p049', name:'AirStrap Wrist Rest', brand:'ErgoTech', price:24, original:null, emoji:'⌨️', category:'accessories', badge:null, rating:'4.6 ★ (5.0k)' },
+  { id:'p050', name:'Laptop Cooling Pad', brand:'Arctic', price:49, original:69, emoji:'🌀', category:'accessories', badge:'sale', rating:'4.4 ★ (3.2k)' },
+  { id:'p051', name:'Portable SSD 1TB', brand:'DataCore', price:119, original:149, emoji:'💾', category:'accessories', badge:'sale', rating:'4.8 ★ (4.9k)' },
+  { id:'p052', name:'Wireless Presenter', brand:'ClickPoint', price:29, original:null, emoji:'🎤', category:'accessories', badge:null, rating:'4.3 ★ (1.8k)' },
+  { id:'p053', name:'Phone Grip Ring', brand:'ConnectX', price:12, original:null, emoji:'📱', category:'accessories', badge:'new', rating:'4.2 ★ (9.1k)' },
+  { id:'p054', name:'4K Webcam Ultra', brand:'VisionLab', price:129, original:159, emoji:'📹', category:'accessories', badge:'sale', rating:'4.7 ★ (2.2k)' },
+  { id:'p055', name:'Cable Sleeve Kit', brand:'NeatPack', price:19, original:null, emoji:'📦', category:'accessories', badge:null, rating:'4.5 ★ (6.7k)' }
+];
+
+// Helper: render product grid based on filtered list
+function renderProducts(list) {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = list.map(p => `
+    <a class="product-card" href="product.html?id=${p.id}" data-log-id="card-${p.id}" data-category="${p.category}">
+      ${p.badge ? `<span class="badge badge-${p.badge}">${p.badge}</span>` : ''}
+      <div class="img-placeholder">${p.emoji}</div>
+      <div class="card-brand">${p.brand}</div>
+      <div class="card-name">${p.name}</div>
+      <div class="card-price">${p.original ? `<s>$${p.original}</s>` : ''}$${p.price}</div>
+      <div class="card-rating">${p.rating}</div>
+      <button class="card-cta" data-log-id="quickadd-${p.id}" onclick="quickAdd(event,'${p.id}','${p.name.replace(/'/g, "\\'")}',${p.price})">Quick Add to Cart</button>
+    </a>
+  `).join('');
+}
+
+// Global filter function (called from filter buttons)
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = cat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === cat);
+  renderProducts(filtered);
+}
+
+// Quick add to cart with localStorage
+function quickAdd(e, id, name, price) {
+  e.preventDefault();
+  e.stopPropagation();
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const existing = cart.find(i => i.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id, name, price, qty: 1 });
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  // subtle micro feedback (optional but nice)
+  const btn = e.currentTarget;
+  const originalText = btn.innerText;
+  btn.innerText = '✓ Added!';
+  setTimeout(() => { if(btn) btn.innerText = originalText; }, 800);
+}
+
+// Update cart badge count
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const total = cart.reduce((sum, i) => sum + i.qty, 0);
+  document.getElementById('cartCount').textContent = total;
+}
+
+// initial render of all 55 products
+renderProducts(PRODUCTS);
+updateCartCount();
+</script>
+</body>
+</html>
