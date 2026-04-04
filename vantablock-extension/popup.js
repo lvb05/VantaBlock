@@ -32,21 +32,43 @@ function updateUI() {
   chrome.storage.local.get(['lastDetection'], (result) => {
     const verdictDiv = document.getElementById('verdictText');
     const confidenceDiv = document.getElementById('confidenceText');
+    const statusCard = document.getElementById('statusCard');
     const detection = result.lastDetection;
-    
+
     if (detection && detection.verdict) {
-      const v = detection.verdict.toUpperCase();
-      verdictDiv.innerHTML = v === 'BOT' ? '🤖 BOT' : (v === 'HUMAN' ? '👤 HUMAN' : '❓ UNKNOWN');
-      verdictDiv.className = `verdict ${detection.verdict}`;
+      const v = detection.verdict.toLowerCase();
+      const verdict = v === 'bot' ? 'bot' : (v === 'human' ? 'human' : 'unknown');
       const conf = detection.confidence ? Math.round(detection.confidence * 100) : '?';
-      confidenceDiv.innerHTML = `Confidence: ${conf}%`;
+
+      // Update verdict text with emoji
+      if (verdict === 'bot') {
+        verdictDiv.innerHTML = '🔴 Bot Detected';
+      } else if (verdict === 'human') {
+        verdictDiv.innerHTML = '🟢 Human';
+      } else {
+        verdictDiv.innerHTML = '🟡 Analyzing';
+      }
+
+      // Apply class for dynamic coloring
+      statusCard.className = `status-card ${verdict}`;
+      verdictDiv.className = `verdict ${verdict}`;
+
+      // Show confidence with better messaging
+      if (verdict === 'bot') {
+        confidenceDiv.innerHTML = `${conf}% confidence • behavior anomaly detected`;
+      } else if (verdict === 'human') {
+        confidenceDiv.innerHTML = `${conf}% confidence • recognized as human`;
+      } else {
+        confidenceDiv.innerHTML = `Analyzing activity patterns...`;
+      }
     } else {
-      verdictDiv.innerHTML = '—';
+      verdictDiv.innerHTML = '🟡 Analyzing';
+      statusCard.className = 'status-card unknown';
       verdictDiv.className = 'verdict unknown';
-      confidenceDiv.innerHTML = 'No data yet';
+      confidenceDiv.innerHTML = 'Awaiting scan results';
     }
   });
-  
+
   // Also display stats
   getStats().then(stats => displayStats(stats));
 }

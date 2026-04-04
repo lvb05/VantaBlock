@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,13 +34,15 @@
       padding: 8px 0;
       border-bottom: 1px solid #eef2f6;
     }
+
     .logo {
       width: 100%;
       text-align: center;
     }
+
     .logo img {
-      width: 100%;
-      max-height: 80px;
+      width: 70%;
+      max-height: 50px;
       object-fit: contain;
     }
 
@@ -51,82 +54,145 @@
     .status-card {
       background: #f8f9fc;
       border-radius: 12px;
-      padding: 8px;
+      padding: 10px 8px;
       text-align: center;
       margin-bottom: 10px;
       border: 1px solid #eef2f6;
+      transition: all 0.3s ease;
     }
+
+    .status-card.human {
+      background: #e8f5e9;
+      border: 1px solid #c8e6c9;
+    }
+
+    .status-card.bot {
+      background: #fdecea;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status-card.unknown {
+      background: #fff4e5;
+      border: 1px solid #ffe0b2;
+    }
+
     .status-label {
       font-size: 9px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #6c757d;
-    }
-    .verdict {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 4px 0;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 4px;
     }
+
+    .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #4caf50;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .verdict {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      letter-spacing: 0.3px;
+    }
+
     .confidence {
-      font-size: 9px;
+      font-size: 8px;
       background: #ffffff;
       display: inline-block;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 20px;
       color: #2c3e50;
       border: 1px solid #e2e8f0;
+      margin-top: 4px;
     }
-    .human { color: #2e7d32; }
-    .bot { color: #d32f2f; }
-    .unknown { color: #ed6c02; }
+
+    .human {
+      color: #2e7d32;
+    }
+
+    .bot {
+      color: #d32f2f;
+    }
+
+    .unknown {
+      color: #ed6c02;
+    }
 
     .stats {
       display: flex;
       gap: 6px;
       margin-bottom: 10px;
     }
+
     .stat-box {
       background: #f8f9fc;
       border-radius: 10px;
-      padding: 6px 2px;
+      padding: 8px 4px;
       flex: 1;
       text-align: center;
       border: 1px solid #eef2f6;
+      transition: all 0.2s ease;
     }
+
     .stat-number {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       color: #1a1a2e;
     }
+
     .stat-label {
-      font-size: 7px;
+      font-size: 8px;
       font-weight: 500;
       color: #6c757d;
       text-transform: uppercase;
+      margin-top: 2px;
     }
 
     button {
       width: 100%;
-      background: #1a1a2e;
+      background: linear-gradient(135deg, #1a1a2e, #2d2d44);
       border: none;
       color: white;
-      padding: 6px;
+      padding: 8px 12px;
       border-radius: 30px;
       font-weight: 600;
       cursor: pointer;
-      font-size: 10px;
+      font-size: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      transition: all 0.2s ease;
     }
+
     button:hover {
-      background: #2d2d44;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(26, 26, 46, 0.15);
     }
 
     .footer {
@@ -134,50 +200,57 @@
       text-align: center;
       margin-top: 8px;
       color: #adb5bd;
+      font-weight: 500;
     }
 
     .spinner {
       display: inline-block;
       width: 10px;
       height: 10px;
-      border: 1.5px solid rgba(255,255,255,0.3);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       border-top-color: #fff;
       animation: spin 0.6s linear infinite;
     }
+
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <!-- Full‑width logo banner -->
     <div class="header">
       <div class="logo">
-        <img src="c:\Users\Sahil\Downloads\icon_nobackgrnd.png" alt="VantaBlock">
+        <img src="icon_nobackgrnd.png" alt="VantaBlock">
       </div>
     </div>
 
     <div class="content">
-      <div class="status-card">
-        <div class="status-label">LAST DETECTION</div>
-        <div class="verdict" id="verdictText">—</div>
-        <div class="confidence" id="confidenceText">Awaiting</div>
+      <div class="status-card" id="statusCard">
+        <div class="status-label">
+          <span class="dot"></span> LIVE DETECTION
+        </div>
+        <div class="verdict" id="verdictText">🔄 Analyzing</div>
+        <div class="confidence" id="confidenceText">Awaiting scan results</div>
       </div>
 
       <div class="stats">
         <div class="stat-box">
           <div class="stat-number" id="totalChecks">0</div>
-          <div class="stat-label">Checks</div>
+          <div class="stat-label">Scans</div>
         </div>
         <div class="stat-box">
           <div class="stat-number" id="blockedCount">0</div>
-          <div class="stat-label">Blocked</div>
+          <div class="stat-label">Threats</div>
         </div>
         <div class="stat-box">
           <div class="stat-number" id="humanCount">0</div>
-          <div class="stat-label">Human</div>
+          <div class="stat-label">Safe</div>
         </div>
       </div>
 
@@ -185,10 +258,11 @@
         <span>⟳</span> Refresh
       </button>
       <div class="footer">
-        bot protection
+        Protection Active • Real-time
       </div>
     </div>
   </div>
   <script src="popup.js"></script>
 </body>
+
 </html>
