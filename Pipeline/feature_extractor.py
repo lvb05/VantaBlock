@@ -191,9 +191,9 @@ class FeatureExtractor:
 
 
 def main() -> None:
-    human_dataset_path = r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\logs\human_logs"
-    agent_dataset_path = r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\logs\bot_logs"
-    output_dir = Path(r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\data")
+    human_dataset_path = r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\Mentor_round\human"
+    agent_dataset_path = r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\Mentor_round\Agent"
+    output_dir = Path(r"C:\Users\indra\Desktop\Tuta hua gulab jamun\mockshop\mockshop\Mentor_round")
     output_dir.mkdir(parents=True, exist_ok=True)
     output_csv_path = output_dir / "features.csv"
 
