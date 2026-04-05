@@ -65,3 +65,5 @@ python extract_features.py --logs-dir logs --output features.csv
   ]
 }
 ```
+Built for HackByte 4.0.
+Uses Playwright for browser automation and scikit‑learn for behavioural classification.
