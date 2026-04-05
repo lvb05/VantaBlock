@@ -1,8 +1,5 @@
 # VantaBlock 
-
-## MockShop Behavioural Logging (Unified Schema)
-
-This workspace collects comparable behavioural data for human and agent sessions.
+A unified behavioural logging system that collects and analyzes user interactions (both human and bot) to detect automated traffic. Built for the HackByte 4.0 hackathon.
 
 ## What Is Implemented
 - Unified event schema for both human (`frontend/logger.js`) and bot (`bot/bot_script.py`).
@@ -11,6 +8,10 @@ This workspace collects comparable behavioural data for human and agent sessions
   - `human_YYYYMMDD_HHMMSS_uniqueID.json`
   - `agent_YYYYMMDD_HHMMSS_uniqueID.json`
 - Feature extraction pipeline: `extract_features.py` writes a CSV table for ML training.
+
+## MockShop Behavioural Logging (Unified Schema)
+
+This workspace collects comparable behavioural data for human and agent sessions.
 
 ## Run
 
